@@ -1,0 +1,27 @@
+ login/register page
+
+admin
+	- dashboard
+
+	- order-detail
+		- order-date, client-order, delivery-men order
+		- manage (accept/cancel/......)
+
+	- users detail
+		- username, email, phone, address
+
+	- delivery-men detail
+		- username, email, phone, address
+
+client
+	- main page
+		- form (important)
+		- website data (promotion, about company,.. )
+	- order history
+
+
+deliver-men
+	- main page
+		-profile
+
+	- order history

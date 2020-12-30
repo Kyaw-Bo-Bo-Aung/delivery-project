@@ -17,5 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// backend
+Route::get('dashboard','BackendController@dashboard')->name('dashboardpage');
+Route::resource('producttypes','ProductTypeController');
+Route::resource('packagingtypes','PackagingTypeController');
+Route::resource('orders','OrderController');
+Route::get('usersdetail','BackendController@usersdetail')->name('usersdetailpage');
+Route::get('deliverydetail','BackendController@deliverydetail')->name('deliverydetailpage');
+
 //delivery-men frontend
 Route::resource('job', 'DeliveryController');

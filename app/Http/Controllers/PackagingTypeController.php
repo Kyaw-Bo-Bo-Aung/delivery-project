@@ -14,7 +14,7 @@ class PackagingTypeController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.packagingtypes.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class PackagingTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.packagingtypes.create');
     }
 
     /**

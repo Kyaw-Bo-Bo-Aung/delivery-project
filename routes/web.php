@@ -22,6 +22,7 @@ Route::get('dashboard','BackendController@dashboard')->name('dashboardpage');
 Route::resource('producttypes','ProductTypeController');
 Route::resource('packagingtypes','PackagingTypeController');
 Route::resource('orders','OrderController');
+Route::resource('weights','WeightController');
 Route::get('usersdetail','BackendController@usersdetail')->name('usersdetailpage');
 Route::get('deliverydetail','BackendController@deliverydetail')->name('deliverydetailpage');
 

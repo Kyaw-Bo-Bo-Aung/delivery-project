@@ -9,7 +9,7 @@
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="#">Product_Types</a></li>
+        <li class="breadcrumb-item"><a href="#">Packaging_Types</a></li>
       </ul>
     </div>
 
@@ -17,21 +17,19 @@
       <div class="col-md-12">
        <div class="tile">
         <div class="tile-body">
-          <h3 class="d-inline-block">Product_Type Create Form</h3>
+          <h3 class="d-inline-block">Packaging_Type Edit Form</h3>
           <a href="{{route('packagingtypes.index')}}" class="btn btn-info float-right">Back</a>
-           <form method="post" action="{{route('packagingtypes.store')}}" enctype="multipart/form-data">
-            @csrf
+
+          <form method="post" action="{{route('packagingtypes.update',$packagingType->id)}}">
+             @csrf
+             @method('PUT')
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}">
-
-              @error('name')
-               <div class="alert alert-danger">{{ $message }}</div>
-              @enderror
+              <input type="text" name="name" id="name" class="form-control" value="{{$packagingType->name}}">
             </div>
 
             <div class="form-group">
-              <input type="submit" name="btn-submit" value="Save" class="btn btn-info">
+              <input type="submit" name="btn-submit" value="Update" class="btn btn-info">
             </div>
             
           </form>

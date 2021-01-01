@@ -4,7 +4,7 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="fa fa-dashboard"></i> Packaging_Types </h1>
+        <h1><i class="fa fa-dashboard"></i> Product_Types </h1>
         <p>A free and open source Bootstrap 4 admin template</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
@@ -17,21 +17,19 @@
       <div class="col-md-12">
        <div class="tile">
         <div class="tile-body">
-          <h3 class="d-inline-block">Product_Type Create Form</h3>
-          <a href="{{route('packagingtypes.index')}}" class="btn btn-info float-right">Back</a>
-           <form method="post" action="{{route('packagingtypes.store')}}" enctype="multipart/form-data">
-            @csrf
+          <h3 class="d-inline-block">Product_Type Edit Form</h3>
+          <a href="{{route('producttypes.index')}}" class="btn btn-info float-right">Back</a>
+
+          <form method="post" action="{{route('producttypes.update',$productType->id)}}">
+             @csrf
+             @method('PUT')
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}">
-
-              @error('name')
-               <div class="alert alert-danger">{{ $message }}</div>
-              @enderror
+              <input type="text" name="name" id="name" class="form-control" value="{{$productType->name}}">
             </div>
 
             <div class="form-group">
-              <input type="submit" name="btn-submit" value="Save" class="btn btn-info">
+              <input type="submit" name="btn-submit" value="Update" class="btn btn-info">
             </div>
             
           </form>

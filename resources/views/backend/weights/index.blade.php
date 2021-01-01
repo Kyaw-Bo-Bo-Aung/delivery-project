@@ -4,12 +4,12 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="fa fa-dashboard"></i>Packaging_Types</h1>
+        <h1><i class="fa fa-dashboard"></i>Weights</h1>
         <p>A free and open source Bootstrap 4 admin template</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="#">Packaging_Types</a></li>
+        <li class="breadcrumb-item"><a href="#">Weights</a></li>
       </ul>
     </div>
 
@@ -19,25 +19,27 @@
         <div class="tile-body">
          <div class="table-responsive">
           <table class="table table-hover table-bordered mt-3" id="sampleTable">
-             <h3 class="d-inline-block">Packaging_Type List</h3>
-             <a href="{{route('packagingtypes.create')}}" class="btn btn-primary float-right">Add New</a>
+             <h3 class="d-inline-block">Weight List</h3>
+             <a href="{{route('weights.create')}}" class="btn btn-primary float-right">Add New</a>
            
            <thead>
             <tr>
              <th>#</th>
-             <th>Name</th>
+             <th>Weight</th>
+             <th>Price</th>
              <th>Actions</th>
             </tr>
            </thead>
            @php $i=1; @endphp
            <tbody>
-            @foreach($packagingTypes as $packagingType)
+            @foreach($weights as $weight)
              <tr>
                <td>{{$i++}}</td>
-               <td>{{$packagingType->name}}</td>
+               <td>{{$weight->weight}}</td>
+               <td>{{$weight->price}}</td>
                <td>
-                <a href="{{route('packagingtypes.edit',$packagingType->id)}}" class="btn btn-warning">Edit</a>
-                 <form method="post" action="{{route('packagingtypes.destroy',$packagingType->id)}}" onsubmit="return confirm('Are you sure?')"   class="d-inline-block">
+                <a href="{{route('weights.edit',$weight->id)}}" class="btn btn-warning">Edit</a>
+                 <form method="post" action="{{route('weights.destroy',$weight->id)}}" onsubmit="return confirm('Are you sure?')"   class="d-inline-block">
                       @csrf
                       @method('DELETE')
                       <input type="submit" name="btn-delete" class="btn btn-danger" value="Delete">

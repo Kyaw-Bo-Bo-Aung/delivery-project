@@ -14,7 +14,8 @@ class WeightController extends Controller
      */
     public function index()
     {
-        //
+        $weights=Weight::orderBy('id','desc')->get();
+        return view('backend.weights.index',compact('weights'));
     }
 
     /**
@@ -24,7 +25,7 @@ class WeightController extends Controller
      */
     public function create()
     {
-        //
+         return view('backend.weights.create');
     }
 
     /**
@@ -35,7 +36,20 @@ class WeightController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'weight' => 'required|max:50',
+            'price' => 'required|max:50',
+             
+        ]);
+
+        $weight = new Weight;
+        $weight->weight = $request->weight;
+         $weight->price = $request->price;
+       
+
+        $weight->save();
+
+        return redirect()->route('weights.index');
     }
 
     /**
@@ -57,7 +71,8 @@ class WeightController extends Controller
      */
     public function edit(Weight $weight)
     {
-        //
+          // $weight=Weight::find($id);
+          return view('backend.weights.edit',compact('weight'));
     }
 
     /**
@@ -69,7 +84,20 @@ class WeightController extends Controller
      */
     public function update(Request $request, Weight $weight)
     {
-        //
+        $request->validate([
+            'weight' => 'required|max:50',
+            'price' => 'required|max:50',
+            
+        ]);
+
+    
+         $weight->weight = $request->weight;
+         $weight->price = $request->price;
+       
+
+        $weight->save();
+
+        return redirect()->route('weights.index');
     }
 
     /**
@@ -80,6 +108,8 @@ class WeightController extends Controller
      */
     public function destroy(Weight $weight)
     {
-        //
+        
+        $weight->delete();
+        return redirect()->route('weights.index');
     }
 }

@@ -13,8 +13,9 @@ class ProductTypeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('backend.producttypes.index');
+    {   
+        $productTypes=ProductType::orderBy('name','asc')->get();
+        return view('backend.producttypes.index',compact('productTypes'));
     }
 
     /**
@@ -35,7 +36,19 @@ class ProductTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'name' => 'required|max:50',
+            
+        ]);
+
+        $productType = new ProductType;
+        $productType->name = $request->name;
+       
+
+        $productType->save();
+
+        return redirect()->route('producttypes.index');
+    
     }
 
     /**
@@ -55,9 +68,11 @@ class ProductTypeController extends Controller
      * @param  \App\ProductType  $productType
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProductType $productType)
-    {
-        //
+    public function edit($id,ProductType $productType)
+    {  
+       // dd($id);
+       $productType=ProductType::find($id);
+       return view('backend.producttypes.edit',compact('productType'));
     }
 
     /**
@@ -67,9 +82,21 @@ class ProductTypeController extends Controller
      * @param  \App\ProductType  $productType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProductType $productType)
-    {
-        //
+    public function update($id,Request $request, ProductType $productType)
+    {    
+
+         $request->validate([
+            'name' => 'required|max:50',
+            
+        ]);
+
+        $productType=ProductType::find($id);
+        $productType->name = $request->name;
+       
+
+        $productType->save();
+
+        return redirect()->route('producttypes.index');
     }
 
     /**
@@ -78,8 +105,10 @@ class ProductTypeController extends Controller
      * @param  \App\ProductType  $productType
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductType $productType)
-    {
-        //
+    public function destroy($id,ProductType $productType)
+    {  
+       $productType=ProductType::find($id);
+       $productType->delete();
+       return redirect()->route('producttypes.index');
     }
 }

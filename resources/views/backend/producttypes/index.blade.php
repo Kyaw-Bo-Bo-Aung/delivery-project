@@ -29,24 +29,22 @@
              <th>Actions</th>
             </tr>
            </thead>
-           
+           @php  $i=1; @endphp
            <tbody>
+            @foreach($productTypes as $productType)
              <tr>
-               <td>1</td>
-               <td>Electronic</td>
+               <td>{{$i++}}</td>
+               <td>{{$productType->name}}</td>
                <td>
-                 <button class="btn btn-warning">Edit</button>
-                 <button class="btn btn-danger">Delete</button>
+                <a href="{{route('producttypes.edit',$productType->id)}}" class="btn btn-warning">Edit</a>
+                 <form method="post" action="{{route('producttypes.destroy',$productType->id)}}" onsubmit="return confirm('Are you sure?')"   class="d-inline-block">
+                      @csrf
+                      @method('DELETE')
+                      <input type="submit" name="btn-delete" class="btn btn-danger" value="Delete">
+                 </form>
                </td>
              </tr>
-             <tr>
-               <td>2</td>
-               <td>Food</td>
-               <td>
-                 <button class="btn btn-warning">Edit</button>
-                 <button class="btn btn-danger">Delete</button>
-               </td>
-             </tr>
+            @endforeach
            </tbody>
 
           </table>

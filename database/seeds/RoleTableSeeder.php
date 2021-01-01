@@ -12,7 +12,7 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        $roles = ['admin', 'client', 'delivery-men'];
+        $roles = ['admin', 'client', 'delivery_man'];
 
         	foreach ($roles as $rolename) {
         		$role = new Role;

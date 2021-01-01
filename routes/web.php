@@ -27,4 +27,11 @@ Route::get('usersdetail','BackendController@usersdetail')->name('usersdetailpage
 Route::get('deliverydetail','BackendController@deliverydetail')->name('deliverydetailpage');
 
 //delivery-men frontend
-Route::resource('job', 'DeliveryController');
+Route::resource('delivery', 'DeliveryManController');
+Route::resource('client', 'ClientController');
+
+
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');

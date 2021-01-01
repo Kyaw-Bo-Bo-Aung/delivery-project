@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class ClientController extends Controller
 {
@@ -14,7 +16,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        //
+        return view ('client.index');
     }
 
     /**
@@ -24,7 +26,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+         return view ('client.create');
     }
 
     /**
@@ -35,8 +37,30 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required'],
+            'address' => ['required'],
+        ]);
+        // dd($request);
+
+        $user = new User;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+        $user->assignRole('client');
+        $client = new Client;
+        $client->phone = $request->phone;
+        $client->address = $request->address;
+        $client->user_id = $user->id;
+        $client->save();
+
+        return redirect()->route('client.index');        
     }
+    
 
     /**
      * Display the specified resource.

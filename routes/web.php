@@ -18,4 +18,11 @@ Route::get('/', function () {
 });
 
 //delivery-men frontend
-Route::resource('job', 'DeliveryController');
+Route::resource('delivery', 'DeliveryManController');
+Route::resource('client', 'ClientController');
+
+
+
+Auth::routes(['verify' => true]);
+
+Route::get('/home', 'HomeController@index')->name('home');

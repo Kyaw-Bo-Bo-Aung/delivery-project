@@ -20,8 +20,8 @@ class CreateOrdersTable extends Migration
             $table->string('drop-off place');
             $table->date('pick-up date');
             $table->time('pick-up time');
-            $table->integer('product-value');
-            $table->integer('status');
+            $table->string('product-value');
+            $table->string('status');
             $table->unsignedBigInteger('product_type_id');
             $table->foreign('product_type_id')->references('id')->on('product_types')->onDelete('cascade');
             $table->unsignedBigInteger('packaging_type_id');

@@ -9,5 +9,5 @@ class Client extends Model
     protected $fillable = 
     [
     	'phone','address','user_id'
-    ]
+    ];
 }

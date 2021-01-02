@@ -34,7 +34,6 @@
           <th>Packaging Type</th>
           <th>Weight</th>
           <th>Customer Name</th>
-          <th>Delivery Name</th>
           <th>Status</th>
           <th>Actions</th>
         </tr>

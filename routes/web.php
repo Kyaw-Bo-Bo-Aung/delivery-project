@@ -28,6 +28,12 @@ Route::get('deliverydetail','BackendController@deliverydetail')->name('deliveryd
 
 //delivery-men frontend
 Route::resource('delivery', 'DeliveryManController');
+Route::get('accountpage', 'DeliveryManController@accountpage')->name('accountpage');
+Route::get('accountdetail', 'DeliveryManController@accountdetail')->name('accountdetail');
+Route::get('orderdetail', 'DeliveryManController@orderdetail')->name('orderdetail');
+
+Route::resource('demo', 'DemoController');
+
 Route::resource('client', 'ClientController');
 
 

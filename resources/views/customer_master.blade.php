@@ -18,10 +18,10 @@
 		</button>
 		<div class="collapse navbar-collapse" id="Nav">
 			<ul class="navbar-nav ml-auto mr-5">
-				<li class="nav-item mx-2"><a href="{{ route('mainpage') }}" class="nav-link">Home</a></li>
-				<li class="nav-item mx-2"><a href="{{ route('aboutpage') }}" class="nav-link">About Us</a></li>
-				<li class="nav-item mx-2"><a href="{{ route('orderinformationpage') }}" class="nav-link">Order information</a></li>
-				<li class="nav-item mx-2"><a href="{{ route('customerloginpage') }}" class="nav-link">Login | Sign-up</a></li>
+				<li class="nav-item mx-2"><a href="{{ route('mainpage') }}" class="nav-link text-white">Home</a></li>
+				<li class="nav-item mx-2"><a href="{{ route('aboutpage') }}" class="nav-link text-white">About Us</a></li>
+				<li class="nav-item mx-2"><a href="{{ route('orderinformationpage') }}" class="nav-link text-white">Order information</a></li>
+				<li class="nav-item mx-2"><a href="{{ route('customerloginpage') }}" class="nav-link text-white">Login | Sign-up</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -30,10 +30,10 @@
 @yield('content')
 
 <!-- footer -->
-	<div class="container-fluid bg-primary pt-4">
+	<div class="container-fluid pt-4 FOOTER">
 		<div class="row">
 			<div class="col-md-6">
-				<p class="text-center text-md-left ml-5">CopyRight@jhujkejikejwij</p>
+				<p class="text-center text-md-left ml-5">CopyRight&copy;delieveryservice2021</p>
 			</div>
 			<div class="col-md-6">
 				<p class="text-center text-md-right mr-5"><i class="fab fa-facebook-square fa-2x mx-2"></i><i class="fab fa-twitter-square fa-2x mx-2"></i><i class="fab fa-instagram-square fa-2x mx-2"></i></p>

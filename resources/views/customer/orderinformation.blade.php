@@ -4,11 +4,11 @@
 
 <!-- Card -->
 	<div class="container">
-		<div class="row">
+		{{-- <div class="row">
 			<div class="col-12">
 				<img src="{{asset('customer_assets/img/14.jpg')}}" class="w-100" height="">
 			</div>
-		</div>
+		</div> --}}
 <!-- end card -->
 
 <!-- order table -->
@@ -20,7 +20,7 @@
 
              <!--  <a href="#" class="btn btn-success float-right"><i class="fas fa-plus mr-3"></i>Add New</a> -->
 
-              <div class="table-responsive mt-3">                
+              <div class="table-responsive mt-3 ORDER-TABLE">                
                 <table class="table table-bordered mt-3 mb-5" id="sampleTable">
                   <thead class="thead-dark">
                     <tr class="Column-Name">

@@ -174,7 +174,11 @@ margin-top: 46px;
 
 .N{
     height: 100px;
-    background-color: #70a8e5;
+    background-color: #568ea6;
+}
+.FOOTER{
+  background-color: #568ea6;
+  color: white;
 }
 
 
@@ -303,7 +307,7 @@ div.PRICE-SEVEN{
     margin-top: 80px;
 }
 .ABOUT{
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: justify;
 }
 .FEEDBACK-STAR{
@@ -685,4 +689,7 @@ input.register100-form-btn{
 }
 div.Order-Detail{
   margin-left: 300px;
+}
+.ORDER-TABLE{
+  margin-bottom: 280px;
 }

@@ -3,11 +3,11 @@
 
 <!-- Card -->
 	<div class="container">
-		<div class="row">
+		{{-- <div class="row">
 			<div class="col-12">
 				<img src="{{asset('customer_assets/img/14.jpg')}}" class="w-100" height="">
 			</div>
-		</div>
+		</div> --}}
 <!-- End card -->
 
 <!-- order detail table -->

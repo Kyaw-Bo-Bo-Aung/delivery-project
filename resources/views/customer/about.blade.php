@@ -5,21 +5,14 @@
 	<h3 class="HH mt-5" align="center">About Us</h3>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 col-lg-6">
-				<div><img src="{{asset('customer_assets/img/4.jpg')}}" class="w-100" height="400"></div>				
+			<div class="col-sm-12 col-lg-6 mt-3" align="center">
+				<div><img src="{{asset('customer_assets/img/15.jpg')}}" weight="300" height="400"></div>				
 			</div>
 			<div class="col-sm-12 col-lg-6">
 				<div class="ABOUT">
-					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delievery Service, was established in 2002. At 41st Street Botahtaung Township, where our very first office was located and our traditional mail business was born by providing services to those who wish to send their items and mail swiftly in a safe and sound manner. We process and deliver different kinds of business letters, invitation cards, Embassy hands-out, magazines, journals and many more. We were delighted to experience lucrative business even at the very beginning. We are even more happier to know that all our customers are satisfied with our services.
+					In 2004 after two years of our opening we continue to expand our business and we opened our new office in Pazundaung Township and we gave a new name yet retaining our original core values which become Royal Express Service. Since then on, our Royal Express Service has been providing exemplary customer services to our valued clients.
+					In Naypyidaw (New Government City) we opened our second branch office in the year of 2006. We introduced the first Express Service with a Twenty Times Money Back Guarantee service, which not only demonstrated our confidence but also set up apart in the local industry. All nature of businesses in Myanmar from industries, embassies, NGO`s and government bodies continued to use our reliable, trusted and accurate Express Service.</p>
 				</div>
 			</div>
 		</div>

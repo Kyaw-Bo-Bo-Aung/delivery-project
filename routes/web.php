@@ -35,3 +35,11 @@ Route::resource('client', 'ClientController');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//.........................Customer View............................... 
+Route::get('main', 'CustomerController@main')->name('mainpage');
+Route::get('about', 'CustomerController@about')->name('aboutpage');
+Route::get('orderinformation', 'CustomerController@orderinformation')->name('orderinformationpage');
+Route::get('orderdetailhistory', 'CustomerController@orderdetailhistory')->name('orderdetailhistorypage');
+Route::get('customerlogin', 'CustomerController@customerlogin')->name('customerloginpage');
+Route::get('customerregister', 'CustomerController@customerregister')->name('customerregisterpage');

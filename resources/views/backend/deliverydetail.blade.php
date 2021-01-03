@@ -4,12 +4,12 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="fa fa-dashboard"></i>Users Detail</h1>
+        <h1><i class="fa fa-dashboard"></i>Delivery Detail</h1>
         <p>A free and open source Bootstrap 4 admin template</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="#">Users Detail</a></li>
+        <li class="breadcrumb-item"><a href="#">Delivery Detail</a></li>
       </ul>
     </div>
 
@@ -19,7 +19,7 @@
         <div class="tile-body">
          <div class="table-responsive">
           <table class="table table-hover table-bordered mt-3" id="sampleTable">
-             <h3 class="d-inline-block">Users Detail</h3>
+             <h3 class="d-inline-block">Delivery Detail</h3>
             
           <thead>
            <tr>
@@ -33,21 +33,17 @@
       </thead>
        <tbody>
          <tr>
-           <td>1</td>
-           <td>Kyaw Kyaw</td>
-           <td>kyawkyaw@gmail.com</td>
-           <td>0987654432</td>
-           <td>Ygn</td>
-         </tr>
-
+          @php $i=1; @endphp
+          @foreach($deliverys as $delivery)
          <tr>
-           <td>1</td>
-           <td>Thu Thu</td>
-           <td>thuthu@gmail.com</td>
-           <td>0987654432</td>
-           <td>Ygn</td>
+           <td>{{$i++}}</td>
+           <td>{{$delivery->user->name}}</td>
+           <td>{{$delivery->user->email}}</td>
+           <td>{{$delivery->phone}}</td>
+            <td>{{$delivery->address}}</td>
+          
          </tr>
-         
+         @endforeach
        </tbody>
         </table>
      </div>

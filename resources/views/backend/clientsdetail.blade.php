@@ -4,12 +4,12 @@
   <main class="app-content">
     <div class="app-title">
       <div>
-        <h1><i class="fa fa-dashboard"></i>Users Detail</h1>
+        <h1><i class="fa fa-dashboard"></i>Clients Detail</h1>
         <p>A free and open source Bootstrap 4 admin template</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-        <li class="breadcrumb-item"><a href="#">Users Detail</a></li>
+        <li class="breadcrumb-item"><a href="#">Clients Detail</a></li>
       </ul>
     </div>
 
@@ -19,41 +19,34 @@
         <div class="tile-body">
          <div class="table-responsive">
           <table class="table table-hover table-bordered mt-3" id="sampleTable">
-             <h3 class="d-inline-block">Users Detail</h3>
+             <h3 class="d-inline-block">Clients Detail</h3>
             
-          <thead>
-           <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Address</th>
-       
-        </tr>
-      </thead>
-       <tbody>
-         <tr>
-           <td>1</td>
-           <td>Mg Mg</td>
-           <td>mgmg@gmail.com</td>
-           <td>0987654432</td>
-           <td>Ygn</td>
-         </tr>
-
-         <tr>
-           <td>1</td>
-           <td>Aye Aye</td>
-           <td>ayeaye@gmail.com</td>
-           <td>0987654432</td>
-           <td>Ygn</td>
-         </tr>
-         
-       </tbody>
-        </table>
-     </div>
-   </div>
+           <thead>
+            <tr>
+             <th>#</th>
+             <th>Name</th>
+             <th>Email</th>
+             <th>Phone</th>
+             <th>Address</th>
+            </tr>
+           </thead>
+           <tbody>
+            @php $i=1; @endphp
+            @foreach($clients as $client)
+            <tr>
+             <td>{{$i++}}</td>
+             <td>{{$client->user->name}}</td>
+             <td>{{$client->user->email}}</td>
+             <td>{{$client->phone}}</td>
+             <td>{{$client->address}}</td>
+            </tr>
+            @endforeach 
+           </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
- </div>
 </div>
   </main>
 @endsection

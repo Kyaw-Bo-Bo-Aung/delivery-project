@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Client;
+use App\DeliveryMan;
 
 class BackendController extends Controller
 {
@@ -11,13 +14,17 @@ class BackendController extends Controller
     return view('backend.dashboard');
    }
 
-    public function usersdetail($value='')
+    public function clientsdetail($value='')
    {
-    return view('backend.usersdetail');
+    $clients=Client::all();
+    return view('backend.clientsdetail',compact('clients'));
    }
 
    public function deliverydetail($value='')
    {
-    return view('backend.deliverydetail');
+    $deliverys=DeliveryMan::all();
+    return view('backend.deliverydetail',compact('deliverys'));
    }
+
+  
 }

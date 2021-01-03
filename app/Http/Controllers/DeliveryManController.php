@@ -106,4 +106,21 @@ class DeliveryManController extends Controller
     {
         //
     }
+
+    public function accountpage($value='')
+    {
+        return view ('delivery.accountpage');
+    }
+
+    public function orderdetail($value='')
+    {
+        return view ('delivery.orderdetail');
+    }
+
+
+
+     public function accountdetail($value='')
+    {
+        return view ('delivery.accountdetail');
+    }
 }

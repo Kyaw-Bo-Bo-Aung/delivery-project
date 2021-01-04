@@ -56,8 +56,11 @@ Route::get('orderdetailhistory', 'CustomerController@orderdetailhistory')->name(
 Route::post('weight', 'CustomerController@weight')->name('weight');
 Route::post('create', 'CustomerController@store')->name('createorder');
 // });
+
 Route::get('customerlogin', 'CustomerController@customerlogin')->name('customerloginpage');
 Route::get('customerregister', 'CustomerController@customerregister')->name('customerregisterpage');
+
+
 
 
 

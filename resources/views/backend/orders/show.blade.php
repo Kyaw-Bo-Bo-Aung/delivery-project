@@ -5,7 +5,6 @@
     <div class="app-title">
       <div>
         <h1><i class="fa fa-dashboard"></i> Orders</h1>
-        <p>A free and open source Bootstrap 4 admin template</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -14,84 +13,103 @@
     </div>
    <div class="row">
       <div class="col-md-12">
-       <div class="tile">
+       {{-- <div class="tile">
         <div class="tile-body">
          <div class="table-responsive">
           <table class="table table-hover table-bordered mt-3" id="sampleTable">
-             <h3 class="d-inline-block">Orders History</h3>
+             <h3 class="d-inline-block">Orders Management</h3>
             
-          <thead>
-           <tr>
-          <th>#</th>
-          <th>Order No</th>
-          <th>Product Value</th>
+      <thead>
+        <tr>
+          
+          <th>Receiver Name</th>
+          <th>Reciver Phone</th>
           <th>Customer Name</th>
+          <th>Product Value</th>
+          <th>Weight</th>
           <th>Pick-up Place</th>
           <th>Drop-off Place</th>
+          <th>Pick-up Date</th>
+          <th>Pick-up Time</th>
+          <th>Product_Types</th>
+          <th>Packaging_Types</th>
           <th>Delivery Name</th>
-          <th>Status</th>
+          <th>Note</th>
+          <th>Action</th>
         </tr>
       </thead>
        <tbody>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <tr>
+         <td>{{$order->receiver_name}}</td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+         <td></td>
+        </tr>
        </tbody>
         </table>
      </div>
    </div>
-  </div>
- </div>
-</div>
-   {{--   <div class="row">
-        <div class="col-md-12">
-          <div class="tile">
-            <section class="invoice">
-              <div class="row mb-4">
-                <div class="col-6">
-                  <h2 class="page-header"><i class="fa fa-globe"></i> Vali Inc</h2>
-                </div>
-                <div class="col-6">
-                  <h5 class="text-right">Date: </h5>
-                </div>
+  </div> --}}
+
+  
+      <div class="card p-3 my-3 bg-light">
+        <div class="card-body">
+          <h5>Orders Management </h5>
+          <div class="dropdown-divider"></div>
+          <div>
+            <ul>
+              <li class="p-1">Receiver Name:<strong>{{$order->receiver_name}}</strong> </li>
+              <li  class="p-1">Receiver Phone:<strong>{{$order->receiver_phone}}</strong></li>
+              <li  class="p-1">Customer Name:</li>
+              <li  class="p-1">Qty:<strong>{{$order->qty}}</strong></li>
+              <li  class="p-1">Weight:<strong>{{$order->weight->weight}}</strong></li>
+                <li  class="p-1">Delivery Feeds:<strong>{{$order->weight->price}}</strong></li>
+              
+              <li  class="p-1">Pick-up place:<strong>{{$order->pick_up_place}}</strong> </li>
+              <li  class="p-1">Drop-off place:<strong>{{$order->drop_off_place}}</strong> </li>
+              <li  class="p-1">Pick-up date:<strong>{{$order->pick_up_date}}</strong> </li>
+              <li  class="p-1">Pick-up time:<strong>{{$order->pick_up_time}}</strong> </li>
+              <li  class="p-1">Product_Types:<strong>{{$order->product_type->name}}</strong></li>
+              <li  class="p-1">Packaging_Types:<strong>{{$order->packaging_type->name}}</strong></li>
+              <li  class="p-1">Delivery:<select>
+                             <option>Choose Delivery</option>
+                             <option>Zaw Zaw</option>
+                             <option>Nay Nay</option>
+                           </select>
+              </li>
+              <li  class="p-1">Note:<strong>{{$order->note}}</strong></li>
+            </ul>
+
+             <div class="mt-2">
+                    @if($order->status == 0)
+                       
+                        <form action="{{route('orders.update',$order->id)}}" method="post">
+                          @csrf
+                          @method("PUT")
+                         <button class="btn btn-info" type="submit" style="margin-left: 1050px;">Confirm</button>
+                        </form>
+                       
+                        
+                        <form  action="{{route('orders.destroy',$order->id)}}" method="post">
+                          @csrf
+                          @method("DELETE")
+                         <button class="btn btn-danger mx-1" type="submit" >Cancel</button>
+                        </form>
+    
+                    @endif
               </div>
-              <div class="row invoice-info">
-                <div class="col-4">From
-                  <address><strong>Vali Inc.</strong><br>518 Akshar Avenue<br>Gandhi Marg<br>New Delhi<br>Email: hello@vali.com</address>
-                </div>
-                <div class="col-4">To
-                  <address><strong></strong><br>795 Folsom Ave, Suite 600<br>San Francisco, CA 94107<br>Phone: (555) 539-1037<br>Email: john.doe@example.com</address>
-                </div>
-                <div class="col-4"><b>Order No:</b><b><br><b>Total:</b></div>
-              </div>
-              <div class="row">
-                <div class="col-12 table-responsive">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>Qty</th>
-                        <th>Item Name</th>
-                        <th>Price</th>
-                        <th>Subtotal</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      
-                  </table>
-                </div>
-              </div>
-              <div class="row d-print-none mt-2">
-                    
-              </div>
-            </section>
           </div>
         </div>
-      </div>   --}}
+      </div>  
+  </div>
+</div>
+   
 
   </main>
 @endsection

@@ -25,26 +25,38 @@
                   <thead class="thead-dark">
                     <tr class="Column-Name">
                       <th>No</th>
-                      <th>Name</th>
                       <th>Product Type</th>
-                      <th>Date</th>
-                      <th>Detail</th>
-                      <th>Action</th>
+                      <th>Packaging Type</th>
+                      <th>Pick-up place</th>
+                      <th>Drop-off place</th>
+                      <th>Pick-up time</th>
+                      <th>Pick-up date</th>
+                      <th>Delivery Feeds</th>
+                     {{--  <th>Action</th> --}}
                     </tr>
                   </thead>
                   <tbody>
-
+                     @php $i=1; @endphp
+                     @foreach($orders as $order)
                     <tr class="Column-Name">
-                      <td class="Column-data">1</td>
-                      <td class="Column-data">Shishiyo</td>
-                      <td class="Column-data">Clothes</td>
-                      <td class="Column-data">9.12.2021</td>
-                      <td class="ACTION"><a href="{{ route('orderdetailhistorypage') }}" class="btn btn-info btn-sm">Detail</a></td>
+                      <td class="Column-data">{{$i++}}</td>
+                    
+                      <td class="Column-data">{{$order->product_type->name}}</td>
+                       <td class="Column-data">{{$order->packaging_type->name}}</td>
+                      <td class="Column-data">{{$order->pick_up_place}}</td>
+                      <td class="Column-data">{{$order->drop_off_place}}</td>
+                      <td class="Column-data">{{$order->pick_up_time}}</td>
+                      <td class="Column-data">{{$order->pick_up_date}}</td>
+                      <td class="Column-data">{{$order->weight->price}}</td>
+
+
+                      {{-- <td class="ACTION"><a href="#" class="btn btn-info btn-sm">Detail</a></td>
                       <td class="ACTION">
                         <a href="#" class="btn btn-warning btn-sm mt-1 mb-1">&nbsp;&nbsp;Edit&nbsp;&nbsp;</a>
                         <input type="submit" name="btnsubmit" class="btn btn btn-danger btn-sm" value="Delete">       
-                      </td>
+                      </td> --}}
                     </tr>
+                    @endforeach
                   </tbody>       
                 </table>
                </div>

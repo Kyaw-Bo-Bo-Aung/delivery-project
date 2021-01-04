@@ -13,8 +13,9 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('backend.orders.index');
+    {   
+        $orders=Order::all();
+        return view('backend.orders.index',compact('orders'));
     }
 
     /**
@@ -46,7 +47,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('backend.orders.show');
+        return view('backend.orders.show',compact('order'));
     }
 
     /**
@@ -69,7 +70,9 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $order->status = 1;
+         $order->save();
+         return redirect()->route('orders.index');
     }
 
     /**
@@ -80,6 +83,8 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        $order->status =2;
+        $order->save();
+        return redirect()->route('orders.index');
     }
 }

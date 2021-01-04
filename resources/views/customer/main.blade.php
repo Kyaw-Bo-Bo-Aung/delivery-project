@@ -23,33 +23,39 @@
 		  	<!-- booking form -->
 				<div class="col-lg-6 S">
 					<section >
-						<form action="#" method="#" class="border border-1">
+						<form action="{{route('createorder')}}" method="post" class="border border-1">
+						@csrf
 					   <!-- select product type -->
 						 <div class="container">
 							 <div class="row">
 							 	<div class="col-12">
 							 		<div class="input-group mt-3">
 								  		<div class="input-group-prepend">
-								    		<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-user mr-2 "></i>Name &nbsp; </span>
+								    		<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-user mr-2"></i>Receiver's Name &nbsp; </span>
 								  		</div>
-								  		<input type="text" minlength="3" maxlength="60" class="form-control" name="name" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter your name">
+								  		<input type="text" minlength="3" maxlength="60" class="form-control @error('receiverName') is-invalid @enderror" name="receiverName" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter full name" value="{{ old('receiverName') }}">
+								  		@error('receiverName')
+										    <div class="alert alert-danger w-100">{{ $message }}</div>
+										@enderror
+										</div>
+										<div class="input-group mt-3">
+								  		<div class="input-group-prepend">
+								    		<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-phone mr-2 "></i>Receiver's phone &nbsp; </span>
+								  		</div>
+								  		<input type="number" minlength="3" maxlength="60" class="form-control @error('receiverPhone') is-invalid @enderror" name="receiverPhone" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter phone number" value="{{ old('receiverPhone') }}">
+								  		@error('receiverPhone')
+										    <div class="alert alert-danger w-100">{{ $message }}</div>
+										@enderror
 										</div>
 							 	</div>
 
 								 <div class="col-12">
 									 <div class="form-group mt-3">
-										<select  name="product-select" required  class="form-control">
-											<option value>Product Type? &nbsp; &nbsp; &nbsp; &nbsp; </option>
-											<option value="Documents">Documents</option>
-											<option value="Books">Books</option>
-											<option value="Clothe">Clothes</option>
-											<option value="Gifts">Gifts</option>
-											<option value="Electronics">Electronics</option>
-											<option value="Food">Food</option>
-											<option value="Jewelry">Jewelry</option>
-											<option value="Medicines">Medicines</option>
-											<option value="Houshold">Houshold</option>
-											<option value="Other">Other</option>
+									 	<label>Product Type</label>
+										<select  name="product_select" required  class="form-control" >
+											@foreach($producttypes as $producttype)
+											<option value={{$producttype->id}}>{{$producttype->name}} &nbsp; &nbsp; &nbsp; &nbsp; </option>
+											@endforeach
 										</select>				
 									  </div>
 								  </div>
@@ -61,12 +67,11 @@
 								<div class="row">
 									<div class="col-6">
 										<div class="form-group">
-											<select name="package-select" class="form-control">
-													<option value>Packing Type? &nbsp; &nbsp;</option>
-													<option value="Envelope">Envelope</option>
-													<option value="Parcel Bag">Parcel Bag</option>
-													<option value="Parcel Box">Parcel Box</option>
-													<option value="Not Packed">Not Packed</option>					
+											<label>Packaging Type</label>
+											<select name="package_select" class="form-control">
+												@foreach($packagingtypes as $packagingtype)
+													<option value={{$packagingtype->id}}>{{$packagingtype->name}} &nbsp; &nbsp;</option>
+												@endforeach			
 												</select>				
 											</div>
 									</div>
@@ -74,20 +79,32 @@
 									<!-- select quantity  -->
 										<div class="col-6">
 											<div class="form-group">
-											<select name="quantity-select" class="form-control">
-													<option value>Quantity? &nbsp; &nbsp;</option>
-													<option value="1 parcel">1 parcel</option>
-													<option value="2 parcel">2 parcel</option>
-													<option value="3 parcel">3 parcel</option>
-													<option value="4 parcel">4 parcel</option>
-													<option value="5 parcel">5 parcel</option>
-													<option value="6 parcel">6 parcel</option>
-													<option value="7 parcel">7 parcel</option>
-													<option value="8 parcel">8 parcel</option>
-													<option value="9 parcel">9 parcel</option>
-													<option value="10 parcel">10 parcel</option>
+											<label>Quantity</label>
+
+											<div class="input-group">
+										  		<input type="number" minlength="3" maxlength="60" class="form-control @error('qty') is-invalid @enderror" name="qty" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="" value="{{ old('qty') }}">
+										  		<div class="input-group-prepend">
+									  			
+										    		<span class="input-group-text" id="inputGroup-sizing-default">pieces</span>
+										    	
+										  		</div>
+										  		@error('qty')
+									    			<div class="alert alert-danger w-100">{{ $message }}</div>
+												@enderror
+											</div>
+											{{-- <select name="quantity-select" class="form-control">
+													<option value="1 parcel">1 pc</option>
+													<option value="2 parcel">2 pcs</option>
+													<option value="3 parcel">3 pcs</option>
+													<option value="4 parcel">4 pcs</option>
+													<option value="5 parcel">5 pcs</option>
+													<option value="6 parcel">6 pcs</option>
+													<option value="7 parcel">7 pcs</option>
+													<option value="8 parcel">8 pcs</option>
+													<option value="9 parcel">9 pcs</option>
+													<option value="10 parcel">10 pcsl</option>
 													<option value="Bulk parcel">Bulk Parcel </option>
-											</select>				
+											</select>				 --}}
 										</div>
 									</div>					
 								</div>				
@@ -103,7 +120,10 @@
 								  			<div class="input-group-prepend">
 								    			<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-map-marker-alt mr-2"></i>Pick-up &nbsp; </span>
 								  			</div>
-								  				<input type="text" minlength="3" maxlength="60" class="form-control" name="pick-up-location" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter pick-up address">
+								  				<input type="text" minlength="3" maxlength="60" class="form-control @error("pickUpLocation") is-invalid @enderror" name="pickUpLocation" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter pick-up address" value="{{ old('pickUpLocation') }}">
+								  				@error('pickUpLocation')
+									    			<div class="alert alert-danger w-100">{{ $message }}</div>
+												@enderror
 										</div><!-- end select pick up -->
 									</div>
 
@@ -113,7 +133,10 @@
 								  				<div class="input-group-prepend">
 								    				<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-map-marker-alt mr-2"></i>Drop-off </span>
 								  				</div>
-								  				<input type="text" minlength="3" maxlength="60" class="form-control" name="drop-off-location" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter drop-off address">
+								  				<input type="text" minlength="3" maxlength="60" class="form-control @error("dropOffLocation") is-invalid @enderror" name="dropOffLocation" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Enter drop-off address" value="{{ old('dropOffLocation') }}">
+								  				@error('dropOffLocation')
+									    			<div class="alert alert-danger w-100">{{ $message }}</div>
+												@enderror
 											</div>
 										<!-- end select drop off -->
 										</div>
@@ -128,13 +151,26 @@
 								  				<div class="input-group-prepend">
 								    				<span class="input-group-text" id="inputGroup-sizing-default"><i class="fas fa-calendar-alt mr-2"></i> Date  &nbsp; &nbsp;&nbsp;</span>
 								  				</div>
-						  							<input type="date" minlength="3" maxlength="60" class="form-control" name="drop-off-location" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Pick-up date">
+						  							<input type="date" minlength="3" maxlength="60" class="form-control @error("pickupDate") is-invalid @enderror" name="pickupDate" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Pick-up date" value="{{ old('pickupDate') }}">
+						  							@error('pickupDate')
+										    			<div class="alert alert-danger w-100">{{ $message }}</div>
+													@enderror
 											</div>
 										</div>	
 										<!-- pick-up time -->
 										<div class="col-12">
+											<div class="input-group mb-3">
+								  				<div class="input-group-prepend">
+								    				<span class="input-group-text" id="inputGroup-sizing-default"><i class="far fa-clock"></i>  &nbsp; Pick-up Time  &nbsp;</span>
+								  				</div>
+						  							<input type="time" min="07:00:00" max="18:00:00" class="form-control @error("pickupTime") is-invalid @enderror" placeholder="pickupTime" name="pickupTime" value="{{ old('pickupTime') }}" />
+						  							@error('pickupTime')
+										    			<div class="alert alert-danger w-100">{{ $message }}</div>
+													@enderror
+											</div>
 											<div class="form-group mb-3">
-							  					<select name="pick-up-time" required class="form-control">
+												
+							  					{{-- <select name="pick-up-time" required class="form-control">
 							  						<option value>Pick-up time</option>
 							  						<option value="08:00 AM">08:00 AM</option>
 							  						<option value="08:30 AM">08:30 AM</option>
@@ -161,7 +197,7 @@
 							  						<option value="08:00 PM">08:00 PM</option>
 							  						<option value="08:30 PM">08:30 PM</option>
 							  						<option value="09:00 PM">09:00 PM</option>
-							  					</select>
+							  					</select> --}}
 							  				</div>
 										</div>	
 									</div>			
@@ -174,17 +210,11 @@
 					        			<!-- select weight -->
 					        				<div class="col-6">
 						        				<div class="form-group mb-3">
-						        					<select name="select-weight" class="form-control">
-						        						<option value>Select weight</option>
-						        						<option value="0-1 Kg">0-1 Kg</option>
-						        						<option value="1-2 Kg">1-2 Kg</option>
-						        						<option value="2-5 Kg">2-5 Kg</option>
-						        						<option value="5-10 Kg">5-10 Kg</option>
-						        						<option value="10-15 Kg">10-15 Kg</option>
-						        						<option value="15-20 Kg">15-20 Kg</option>
-						        						<option value="20-25 Kg">20-25 Kg</option>
-						        						<option value="Park Truck Load">Park Truck Load</option>
-						        						<option value="Full Truck Load">Full Truck Load</option>
+						        					<label>Select weight</label>
+						        					<select name="select_weight" class="form-control weight-change">
+						        						@foreach($weights as $weight)
+						        						<option value={{$weight->id}}>{{$weight->weight}}</option>
+						        						@endforeach
 						        					</select>
 						        				</div>
 					        				</div>
@@ -192,10 +222,16 @@
 
 					        			<!-- select product value -->
 						        			<div class="col-6">
-						        				<div class="form-group mb-3">
-						        					<input type="number" min="0" max="50000" step="any" name="product-value" class="form-control" placeholder="product-value">
+						        				<label>Delivery fees</label>
+						        				<div class="form-group price-change">
+						        					
 						        				</div>
 						        			</div>
+					        		</div>
+					        		<div>
+					        			<div class="form-group mb-3">
+				        					<input type="text" min="0" max="50000" step="any" name="note" class="form-control" placeholder="Note to your delivery-man" value="{{ old('note') }}">
+				        				</div>
 					        		</div>
 					        	</div>
 					        	<!-- end select product value -->

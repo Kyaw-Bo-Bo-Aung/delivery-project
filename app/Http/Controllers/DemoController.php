@@ -17,10 +17,7 @@ class DemoController extends Controller
      */
     public function index()
     {
-        $producttypes = ProductType::all();
-        $packagingtypes = PackagingType::all();
-        $weights = Weight::all();
-        return view ('demo.index', compact("producttypes",'packagingtypes','weights'));
+        return view ('demo.index');
     }
 
     /**
@@ -30,7 +27,10 @@ class DemoController extends Controller
      */
     public function create()
     {
-        
+        $producttypes = ProductType::all();
+        $packagingtypes = PackagingType::all();
+        $weights = Weight::all();
+        return view ('demo.create', compact("producttypes",'packagingtypes','weights'));
     }
 
     /**

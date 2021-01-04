@@ -2,9 +2,10 @@
 <html>
 <head>
 	<title></title>
-
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<script type="text/javascript" src="{{asset('customer_assets/bootstrap/js/jquery.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('customer_assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+	<script type="text/javascript" src="{{asset('kbba/js/myscript.js')}}"></script>
 	<link rel="stylesheet" type="text/css" href="{{asset('customer_assets/bootstrap/css/custom.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('customer_assets/bootstrap/css/bootstrap.min.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('customer_assets/fontawesome/css/all.min.css')}}">

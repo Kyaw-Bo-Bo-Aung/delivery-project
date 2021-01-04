@@ -15,15 +15,16 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('receiver-name');
-            $table->string('receiver-phone');
+            $table->string('receiver_name');
+            $table->string('receiver_phone');
             $table->integer('qty');
-            $table->string('pick-up place');
-            $table->string('drop-off place');
-            $table->date('pick-up date');
-            $table->time('pick-up time');
-            $table->string('product-value')->nullable();
+            $table->string('pick_up_place');
+            $table->string('drop_off_place');
+            $table->date('pick_up_date');
+            $table->time('pick_up_time');
+            $table->string('product_value')->nullable();
             $table->string('status')->nullable();
+             $table->text('note')->nullable();
             $table->unsignedBigInteger('product_type_id');
             $table->foreign('product_type_id')->references('id')->on('product_types')->onDelete('cascade');
             $table->unsignedBigInteger('packaging_type_id');

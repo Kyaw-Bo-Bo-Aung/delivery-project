@@ -15,7 +15,7 @@
 					<div>
 						<p>Your level: </p>
 						<p>Delivered orders: 31</p>
-						<button class="btn btn-sm btn-outline-dark">Accout Histroy</button>
+						<a href="/deliveryman/accountdetail" class="btn btn-sm btn-outline-dark">Accout Histroy</a>
 					</div>
 				</div>
 			</div>

@@ -13,10 +13,10 @@ class StatusTableSeeder extends Seeder
     {
         $statuses = ['requesting', 'got delivery-man', 'On the way'];
 
-        	foreach ($statuses as $name) {
-        		$status = new Status;
-        		$status->name = $name;
-        		$status->save();
+        	// foreach ($statuses as $name) {
+        	// 	$status = new Status;
+        	// 	$status->name = $name;
+        	// 	$status->save();
         	}
     }
 }

@@ -8,6 +8,7 @@ use App\PackagingType;
 use App\Weight;
 use App\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -43,6 +44,8 @@ class CustomerController extends Controller
 
     public function store(Request $request){
         // dd ($request);
+        $client_id = auth()->user()->id;
+        // dd($user_id);
         $request->validate([
             'receiverName' => 'required',
             'receiverPhone' => 'required',
@@ -69,6 +72,7 @@ class CustomerController extends Controller
         $order->pick_up_time = $request->pickupTime;
         $order->product_value = $request->deliveryFees;
         $order->weight_id = $request->select_weight;
+        $order->client_id = $client_id;
         $order->note = $request->note;
         $order->save();
 

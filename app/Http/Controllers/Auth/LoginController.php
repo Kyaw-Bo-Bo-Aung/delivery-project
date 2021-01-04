@@ -41,7 +41,7 @@ class LoginController extends Controller
     protected function redirectTo()
     {
         $roles = auth()->user()->getRoleNames();
-
+        // dd($roles);
         // Check user role
         switch ($roles[0]) {
             case 'admin':

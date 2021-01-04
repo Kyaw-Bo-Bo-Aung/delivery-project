@@ -1,6 +1,9 @@
 @extends('customer_master')
 @section('content')
 
+<div>
+	<img src="https://www.libertyinsurance.in/images/register-banner.jpg" class="img-fluid w-100">
+</div>
 <!-- login -->
 	<div class="Limiter100">
 		<div class="Container-register100">
@@ -8,7 +11,7 @@
 				<div class="container">
 					<form method="POST" action="{{ route('client.store') }}">
 						@csrf
-						<h3 class="text-center pb-5">Register Form</h3>
+						<h3 class="text-center pb-5">Client Register Form</h3>
 						<div class="row">
 							<div class="col-12">
 								<input type="text" class="form-control form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus id="user name" placeholder="User name">

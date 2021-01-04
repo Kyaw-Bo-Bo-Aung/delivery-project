@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Status;
 
 class StatusTableSeeder extends Seeder
 {
@@ -12,12 +11,12 @@ class StatusTableSeeder extends Seeder
      */
     public function run()
     {
-         // $statuses = ['requesting', 'got delivery-man', 'On the way'];
+        $statuses = ['requesting', 'got delivery-man', 'On the way'];
 
-        	// foreach ($statuses as $name) {
-        	// 	$status = new Status;
-        	// 	$status->name = $name;
-        	// 	$status->save();
-        	// }
+        	foreach ($statuses as $name) {
+        		$status = new Status;
+        		$status->name = $name;
+        		$status->save();
+        	}
     }
 }

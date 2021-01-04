@@ -19,27 +19,33 @@
         <div class="tile-body">
          <div class="table-responsive">
           <table class="table table-hover table-bordered mt-3" id="sampleTable">
-             <h3 class="d-inline-block">Orders List</h3>
+             <h3 class="d-inline-block">Orders</h3>
             
           <thead>
            <tr>
           <th>#</th>
-          <th>Order No</th>
+         <th>Order No</th>
+          <th>Product Value</th>
+          <th>Customer Name</th>
           <th>Pick-up Place</th>
           <th>Drop-off Place</th>
-          <th>Pick-up Date</th>
-          <th>Pick-up Time</th>
-          <th>Product Value</th>
-          <th>Product Type</th>
-          <th>Packaging Type</th>
-          <th>Weight</th>
-          <th>Customer Name</th>
+          <th>Delivery Name</th>
           <th>Status</th>
-          <th>Actions</th>
+          <th>Action</th>
         </tr>
       </thead>
        <tbody>
-        
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <a href="" class="btn btn-info ">Detail</a>
+        </td>
        </tbody>
         </table>
      </div>

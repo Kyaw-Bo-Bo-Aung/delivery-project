@@ -141,10 +141,12 @@
        {{--  <li><a class="app-menu__item" href="docs.html"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Docs</span></a></li> --}}
         <li><a class="app-menu__item {{ Request::is('producttypes*') ? 'active' : '' }}" href="{{route('producttypes.index')}}"><i class="app-menu__icon fa fa-cubes"></i><span class="app-menu__label">Product_Types</span></a></li>
         <li><a class="app-menu__item {{ Request::is('packagingtypes*') ? 'active' : '' }}" href="{{route('packagingtypes.index')}}"><i class="app-menu__icon fa fa-archive"></i><span class="app-menu__label">Packaging_Types</span></a></li>
-         <li><a class="app-menu__item {{ Request::is('orders*') ? 'active' : '' }}" href="{{route('orders.index')}}"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Orders</span></a></li>
-          <li><a class="app-menu__item {{ Request::is('usersdetail') ? 'active' : '' }}" href="{{route('usersdetailpage')}}"><i class="app-menu__icon fa fa-address-card"></i><span class="app-menu__label">Users Detail</span></a></li>
-          <li><a class="app-menu__item {{ Request::is('deliverydetail') ? 'active' : '' }}" href="{{route('deliverydetailpage')}}"><i class="app-menu__icon  fa fa-bicycle"></i><span class="app-menu__label">Delivery Detail</span></a></li>
-          <li><a class="app-menu__item {{ Request::is('weights*') ? 'active' : '' }}" href="{{route('weights.index')}}"><i class="app-menu__icon fa fa-balance-scale"></i><span class="app-menu__label">Weights</span></a></li>
+        <li><a class="app-menu__item {{ Request::is('orders') ? 'active' : '' }}" href="{{route('orders.index')}}"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Orders</span></a></li>
+        <li><a class="app-menu__item {{ Request::is('clientsdetail*') ? 'active' : '' }}" href="{{route('clientsdetailpage')}}"><i class="app-menu__icon fa fa-address-card"></i><span class="app-menu__label">Clients Detail</span></a></li>
+        <li><a class="app-menu__item {{ Request::is('deliverydetail') ? 'active' : '' }}" href="{{route('deliverydetailpage')}}"><i class="app-menu__icon  fa fa-bicycle"></i><span class="app-menu__label">Delivery Detail</span></a></li>
+        <li><a class="app-menu__item {{ Request::is('weights*') ? 'active' : '' }}" href="{{route('weights.index')}}"><i class="app-menu__icon fa fa-balance-scale"></i><span class="app-menu__label">Weights</span></a></li>
+
+
        
       </ul>
     </aside>

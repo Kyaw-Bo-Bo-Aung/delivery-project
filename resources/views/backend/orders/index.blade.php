@@ -5,7 +5,6 @@
     <div class="app-title">
       <div>
         <h1><i class="fa fa-dashboard"></i> Orders</h1>
-        <p>A free and open source Bootstrap 4 admin template</p>
       </div>
       <ul class="app-breadcrumb breadcrumb">
         <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -24,8 +23,7 @@
           <thead>
            <tr>
           <th>#</th>
-         <th>Order No</th>
-          <th>Product Value</th>
+          <th>Qty</th>
           <th>Customer Name</th>
           <th>Pick-up Place</th>
           <th>Drop-off Place</th>
@@ -35,17 +33,28 @@
         </tr>
       </thead>
        <tbody>
+        @foreach($orders as $order)
+        <tr>
         <td></td>
+        <td>{{$order->qty}}</td>
         <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{$order->pick_up_place}}</td>
+        <td>{{$order->drop_off_place}}</td>
         <td></td>
         <td>
-          <a href="" class="btn btn-info ">Detail</a>
+          @if($order->status==0)
+                <p class="text-white d-inline-block bg-warning rounded py-1 px-2">Pending</p>
+              @elseif($order->status==1)
+                <p class="text-white d-inline-block bg-success rounded py-1 px-2">Success</p>
+              @elseif($order->status==2)
+                <p class="text-white d-inline-block bg-danger rounded py-1 px-2">Cancel</p>
+              @endif
         </td>
+        <td>
+          <a href="{{route('orders.show',$order->id)}}" class="btn btn-info">Detail</a>
+        </td>
+        </tr>
+        @endforeach
        </tbody>
         </table>
      </div>

@@ -8,6 +8,7 @@ use App\PackagingType;
 use App\Weight;
 use App\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
@@ -15,15 +16,17 @@ class CustomerController extends Controller
         $producttypes = ProductType::all();
         $packagingtypes = PackagingType::all();
         $weights = Weight::all();
-
+         // dd(auth()->user());
 
     	return view ('customer.main',compact("producttypes","packagingtypes", "weights"));
+
     }
     public function about($value=''){
     	return view ('customer.about');
     }
     public function orderinformation($value=''){
-    	return view ('customer.orderinformation');
+    	$orders=Order::all();
+        return view ('customer.orderinformation',compact('orders'));
     }
     public function orderdetailhistory($value=''){
     	return view ('customer.orderdetailhistory');

@@ -37,7 +37,7 @@
         <tr>
         <td></td>
         <td>{{$order->qty}}</td>
-        <td></td>
+        <td>{{$order->client->user->name}}</td>
         <td>{{$order->pick_up_place}}</td>
         <td>{{$order->drop_off_place}}</td>
         <td></td>

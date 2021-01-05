@@ -26,4 +26,16 @@ class Order extends Model
     {
     	return $this->belongsTo('App\PackagingType');
     }
+
+    public function client($value='')
+    {
+        return $this->belongsTo('App\Client');
+    }
+
+    public function user($value='')
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    
 }

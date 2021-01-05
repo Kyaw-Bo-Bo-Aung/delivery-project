@@ -7,8 +7,8 @@
 		  		<div class="col-lg-6 mt-5">
 		  			<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 					  <div class="carousel-inner">
-					    <div class="carousel-item active">
-					      <img src="{{asset('customer_assets/img/2.jpg')}}" class="d-block" alt="..." height="500px" width="450px">
+					    <div class="carousel-item active ">
+					      <img src="{{asset('customer_assets/img/d4.jpg')}}" class="d-block mt-4" alt="..." height="500px" width="650px">
 					    </div>
 					    <div class="carousel-item">
 					      <img src="{{asset('customer_assets/img/2.jpg')}}" class="d-block w-100" alt="..." height="600px" width="300px">

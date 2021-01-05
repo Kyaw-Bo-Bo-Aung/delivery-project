@@ -25,6 +25,8 @@
                   <thead class="thead-dark">
                     <tr class="Column-Name">
                       <th>No</th>
+                      <th>Receiver Name</th>
+                      <th>Receiver Phone</th>
                       <th>Product Type</th>
                       <th>Packaging Type</th>
                       <th>Pick-up place</th>
@@ -40,6 +42,8 @@
                      @foreach($orders as $order)
                     <tr class="Column-Name">
                       <td class="Column-data">{{$i++}}</td>
+                        <td class="Column-data">{{$order->receiver_name}}</td>
+                         <td class="Column-data">{{$order->receiver_phone}}</td>
                     
                       <td class="Column-data">{{$order->product_type->name}}</td>
                        <td class="Column-data">{{$order->packaging_type->name}}</td>

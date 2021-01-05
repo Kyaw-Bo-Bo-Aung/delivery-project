@@ -51,11 +51,10 @@
 							<li>Pick-up time: {{$order->pick_up_time}}</li>
 							<li>Receiver Name: {{$order->receiver_name}}</li>
 							<li>Receiver Phone: {{$order->receiver_phone}}</li>
-							<li>Sender Name: {{$order->client_id}}</li>
-							<li>Receiver Phone: {{$order->receiver_phone}}</li>
-							<li>Weight: {{$order->weight_id}}</li>
+							<li>Sender Name: {{$order->client->user->name}}</li>
+							<li>Weight: {{$order->weight->weight}}</li>
 							<li>Note: {{$order->note}}</li>
-							<li><b>Delivery-Fees: {{$order->product_value}}</b></li>
+							<li><b>Delivery-Fees: {{$order->weight->price}}</b></li>
 							
 						</ul>
 						<div class="float-right">
@@ -66,6 +65,8 @@
 				</div>
 			</div>
 			@endforeach	
+
+			
 			<div class="card p-3 my-3 bg-light">
 				<div class="card-body">
 					<h5>Order Done <img src="https://www.nicepng.com/png/detail/443-4439064_blue-check-mark-icon-png-check-mark-circle.png" width="44" height="30"></h5>

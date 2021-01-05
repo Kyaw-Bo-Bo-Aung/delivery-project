@@ -13,7 +13,7 @@
 <body>
 <!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light N">
-		<img src="bootstrap/images/logo.png" class="img-fluid logo_image ml-4">
+		{{-- <img src="{{asset('customer_assets/img/l2.jpg')}}" class="img-fluid logo_image ml-4"> --}}
 		<button class="navbar-toggler" data-target="#Nav" data-toggle="collapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>

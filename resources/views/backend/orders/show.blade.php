@@ -66,10 +66,10 @@
             <ul>
               <li class="p-1">Receiver Name:<strong>{{$order->receiver_name}}</strong> </li>
               <li  class="p-1">Receiver Phone:<strong>{{$order->receiver_phone}}</strong></li>
-              <li  class="p-1">Customer Name:</li>
+              <li  class="p-1">Customer Name:{{$order->client->user->name}}</li>
               <li  class="p-1">Qty:<strong>{{$order->qty}}</strong></li>
               <li  class="p-1">Weight:<strong>{{$order->weight->weight}}</strong></li>
-                <li  class="p-1">Delivery Feeds:<strong>{{$order->weight->price}}</strong></li>
+                <li  class="p-1">Delivery Fees:<strong>{{$order->weight->price}}</strong></li>
               
               <li  class="p-1">Pick-up place:<strong>{{$order->pick_up_place}}</strong> </li>
               <li  class="p-1">Drop-off place:<strong>{{$order->drop_off_place}}</strong> </li>

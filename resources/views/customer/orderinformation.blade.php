@@ -31,7 +31,7 @@
                       <th>Drop-off place</th>
                       <th>Pick-up time</th>
                       <th>Pick-up date</th>
-                      <th>Delivery Feeds</th>
+                      <th>Delivery Fees</th>
                      {{--  <th>Action</th> --}}
                     </tr>
                   </thead>

@@ -16,4 +16,12 @@ class Client extends Model
     {   
         return $this->belongsTo('App\User');
     }
+
+     public function orders()
+  {
+    return $this->hasMany('App\Order');
+  }
+  
+  
+  
 }

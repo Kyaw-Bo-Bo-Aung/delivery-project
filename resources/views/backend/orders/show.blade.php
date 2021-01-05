@@ -66,7 +66,7 @@
             <ul>
               <li class="p-1">Receiver Name:<strong>{{$order->receiver_name}}</strong> </li>
               <li  class="p-1">Receiver Phone:<strong>{{$order->receiver_phone}}</strong></li>
-              <li  class="p-1">Customer Name:{{$order->client->user->name}}</li>
+              <li  class="p-1">Customer Name:<strong>{{$order->client->user->name}}</strong></li>
               <li  class="p-1">Qty:<strong>{{$order->qty}}</strong></li>
               <li  class="p-1">Weight:<strong>{{$order->weight->weight}}</strong></li>
                 <li  class="p-1">Delivery Fees:<strong>{{$order->weight->price}}</strong></li>
@@ -77,12 +77,13 @@
               <li  class="p-1">Pick-up time:<strong>{{$order->pick_up_time}}</strong> </li>
               <li  class="p-1">Product_Types:<strong>{{$order->product_type->name}}</strong></li>
               <li  class="p-1">Packaging_Types:<strong>{{$order->packaging_type->name}}</strong></li>
+
               <li  class="p-1">Delivery:<select>
                              <option>Choose Delivery</option>
-                             <option>Zaw Zaw</option>
-                             <option>Nay Nay</option>
+                            
                            </select>
               </li>
+      
               <li  class="p-1">Note:<strong>{{$order->note}}</strong></li>
             </ul>
 
@@ -92,6 +93,7 @@
                         <form action="{{route('orders.update',$order->id)}}" method="post">
                           @csrf
                           @method("PUT")
+
                          <button class="btn btn-info" type="submit" style="margin-left: 1050px;">Confirm</button>
                         </form>
                        

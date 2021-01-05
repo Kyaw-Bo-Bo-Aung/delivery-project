@@ -69,10 +69,17 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Order $order)
-    {
-        $order->status = 1;
+    {    
+
+         // dd($order);
+         $order->status = 1;
          $order->save();
          return redirect()->route('orders.index');
+         // $transaction=new Transaction;
+         // $transaction->order_id=$order->id;
+        
+
+
     }
 
     /**

@@ -26,7 +26,9 @@ Route::resource('producttypes','ProductTypeController');
 Route::resource('packagingtypes','PackagingTypeController');
 Route::resource('orders','OrderController');
 Route::resource('weights','WeightController');
+
 Route::get('clientsdetail','BackendController@clientsdetail')->name('clientsdetailpage');
+
 Route::get('deliverydetail','BackendController@deliverydetail')->name('deliverydetailpage');
 // });
 

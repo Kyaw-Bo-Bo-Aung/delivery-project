@@ -58,7 +58,7 @@ class ClientController extends Controller
         $client->user_id = $user->id;
         $client->save();
 
-        return redirect()->route('mainpage');        
+        return redirect()->route('customerloginpage');        
     }
     
 

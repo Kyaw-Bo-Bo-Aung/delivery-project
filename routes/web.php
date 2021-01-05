@@ -30,15 +30,22 @@ Route::get('clientsdetail','BackendController@clientsdetail')->name('clientsdeta
 Route::get('deliverydetail','BackendController@deliverydetail')->name('deliverydetailpage');
 // });
 
+
+
+
 //delivery-men 
 // Route::middleware('role:delivery_man')->group(function () {
-Route::resource('delivery', 'DeliveryManController');
+
 Route::get('accountpage', 'DeliveryManController@accountpage')->name('accountpage');
 Route::get('/deliveryman/accountdetail', 'DeliveryManController@accountdetail')->name('delivery.accountdetail');
 Route::get('orderdetail', 'DeliveryManController@orderdetail')->name('orderdetail');
-
 Route::resource('client', 'ClientController');
+
 // });
+
+Route::resource('delivery', 'DeliveryManController');
+
+
 
 
 Auth::routes(['verify' => true]);

@@ -20,12 +20,11 @@ $(document).ready(function(){
 			html += `
 				<input type="number" min="0" max="50000" step="any" 
 				name="deliveryFees" class="form-control" placeholder="${price}" 
-				readonly="" >
+				readonly="" value="${price}">
 			`
 			$('.price-change').html(html);
 		})
 	})
-
 
 
 

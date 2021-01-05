@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DeliveryMan;
 use Illuminate\Http\Request;
 use App\User;
+use App\Order;
 use Illuminate\Support\Facades\Hash;
 
 class DeliveryManController extends Controller 
@@ -59,7 +60,7 @@ class DeliveryManController extends Controller
         $delivery_man->user_id = $user->id;
         $delivery_man->save();
 
-        return redirect()->route('main');        
+        return redirect()->route('delivery.index');        
     }
 
     /**
@@ -109,7 +110,8 @@ class DeliveryManController extends Controller
 
     public function accountpage($value='')
     {
-        return view ('delivery.accountpage');
+        $orders = Order::orderby('id','desc')->get();
+        return view ('delivery.accountpage',compact('orders'));
     }
 
     public function orderdetail($value='')

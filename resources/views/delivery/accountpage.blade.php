@@ -47,6 +47,7 @@
 					<div>
 						<ul>
 							
+
 							<li>Pick-place: {{$transaction->order->pick_up_place}}</li>
 							<li>Pick-up date: {{$transaction->order->pick_up_date}}</li>
 							<li>Pick-up time: {{$transaction->order->pick_up_time}}</li>
@@ -82,6 +83,8 @@
 				</div>
 			</div>
 			@endforeach	
+
+			
 			<div class="card p-3 my-3 bg-light">
 				<div class="card-body">
 					<h5>Order Done <img src="https://www.nicepng.com/png/detail/443-4439064_blue-check-mark-icon-png-check-mark-circle.png" width="44" height="30"></h5>

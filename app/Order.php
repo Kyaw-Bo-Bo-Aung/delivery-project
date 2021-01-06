@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Weight;
 use App\ProductType;
+use App\Transaction;
 
 class Order extends Model
 {
@@ -35,6 +36,11 @@ class Order extends Model
     public function user($value='')
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function transaction()
+    {
+        return $this->hasOne('App\Transaction');
     }
 
     

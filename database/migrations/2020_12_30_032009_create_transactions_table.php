@@ -17,10 +17,9 @@ class CreateTransactionsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
-            $table->unsignedBigInteger('delivery_man_id');
+            $table->unsignedBigInteger('delivery_man_id')->nullable();
             $table->foreign('delivery_man_id')->references('id')->on('delivery_men')->onDelete('cascade');
-            $table->unsignedBigInteger('status_id');
-            $table->foreign('status_id')->references('id')->on('statuses')->onDelete('cascade');
+            $table->tinyInteger('status')->default('1');
             $table->timestamps();
         });
     }

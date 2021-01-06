@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\DeliveryMan;
+use App\Transaction;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -15,7 +17,9 @@ class OrderController extends Controller
     public function index()
     {   
         $orders=Order::all();
-        return view('backend.orders.index',compact('orders'));
+        $transactions = Transaction::all();
+        // dd($transactions);
+        return view('backend.orders.index',compact('orders','transactions'));
     }
 
     /**
@@ -47,7 +51,11 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('backend.orders.show',compact('order'));
+        // dd($order);
+        $deliverymen = DeliveryMan::all();
+        $transaction = Transaction::where('order_id',$order->id)->first();
+        // dd($transaction);
+        return view('backend.orders.show',compact('order','deliverymen','transaction'));
     }
 
     /**
@@ -94,4 +102,32 @@ class OrderController extends Controller
         $order->save();
         return redirect()->route('orders.index');
     }
+
+    public function detail(Request $request)
+    {
+        // dd ($request->id);
+        $id = $request->id;
+        $orderdetail = Order::where('id',$id)->get();
+        return $orderdetail;
+    }
+
+    public function assign(Request $request,$id,$order)
+    {
+        // dd ($id,$order);
+        $transaction = Transaction::where('id', $id)->first();
+        $order = Order::where('id',$order)->first();
+        // dd($transaction);
+        $deliveryId = $request->deliveryId;
+        $order->status = 2;
+        $order->save();
+        // dd($deliveryId);
+        $transaction->delivery_man_id = $deliveryId;
+        $transaction->status = 2;
+        $transaction->save();
+
+        return redirect()->route('orders.index');
+        
+    }
+
+
 }

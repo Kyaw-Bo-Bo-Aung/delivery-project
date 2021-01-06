@@ -212,8 +212,9 @@
 						        				<div class="form-group mb-3">
 						        					<label>Select weight</label>
 						        					<select name="select_weight" class="form-control weight-change">
+						        						<option value="" disabled selected hidden>Choose weight</option>
 						        						@foreach($weights as $weight)
-						        						<option value={{$weight->id}}>{{$weight->weight}}</option>
+						        						<option value={{$weight->id}} >{{$weight->weight}}</option>
 						        						@endforeach
 						        					</select>
 						        				</div>
@@ -223,7 +224,7 @@
 					        			<!-- select product value -->
 						        			<div class="col-6">
 						        				<label>Delivery fees</label>
-						        				<div class="form-group price-change">
+						        				<div class="form-group price-change border" >
 						        					
 						        				</div>
 						        			</div>

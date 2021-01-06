@@ -28,9 +28,13 @@
                         <a class="nav-link text-white" href="{{ route('customerloginpage') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{{ route('customerregisterpage') }}">{{ __('Register') }}</a>
-                        </li>
+                    <div class="dropdown show">
+                	<a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register</a>
+                    	<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						    <a class="dropdown-item" href="{{ route('customerregisterpage') }}">{{ __('Client') }}</a>
+						    <a class="dropdown-item" href="{{ route('delivery.create') }}">{{ __('Delivery-man') }}</a>
+						</div>  
+                     </div>
                     @endif
                 @else
                     <li class="nav-item dropdown">

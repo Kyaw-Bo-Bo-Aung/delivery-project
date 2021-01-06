@@ -25,7 +25,10 @@ Route::get('dashboard','BackendController@dashboard')->name('dashboardpage');
 Route::resource('producttypes','ProductTypeController');
 Route::resource('packagingtypes','PackagingTypeController');
 Route::resource('orders','OrderController');
+Route::post('/order/detail','OrderController@detail')->name('orderdetail');
 Route::resource('weights','WeightController');
+Route::post('/order/assign/{id}/{order}','OrderController@assign')->name('orderassign');
+
 
 Route::get('clientsdetail','BackendController@clientsdetail')->name('clientsdetailpage');
 
@@ -39,6 +42,10 @@ Route::get('deliverydetail','BackendController@deliverydetail')->name('deliveryd
 // Route::middleware('role:delivery_man')->group(function () {
 
 Route::get('accountpage', 'DeliveryManController@accountpage')->name('accountpage');
+Route::get('/accountpage/confirm/{id}/{order}', 'DeliveryManController@confirm')->name('orderconfirm');
+Route::get('/accountpage/pickup/{id}/{order}', 'DeliveryManController@pickup')->name('orderpickup');
+Route::get('/accountpage/delivered/{id}/{order}', 'DeliveryManController@delivered')->name('orderdelivered');
+Route::get('/accountpage/cancel/{id}/{order}', 'DeliveryManController@cancel')->name('ordercancel');
 Route::get('/deliveryman/accountdetail', 'DeliveryManController@accountdetail')->name('delivery.accountdetail');
 Route::get('orderdetail', 'DeliveryManController@orderdetail')->name('orderdetail');
 Route::resource('client', 'ClientController');

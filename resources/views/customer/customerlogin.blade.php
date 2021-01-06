@@ -11,7 +11,7 @@
 						<i class="fas fa-user-circle fa-7x"></i>
 					</span>
 					<span class="Login100-form-title p-b-48">
-						Client Log in
+						Log in
 					</span>
 					<div class="wrap-input100 validate-input mt-5" data-validate="Valid email is: @gmail.com">
 						<input type="text" name="email" class="input100 mt-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>

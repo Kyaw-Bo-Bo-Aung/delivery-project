@@ -6,6 +6,8 @@ use App\DeliveryMan;
 use Illuminate\Http\Request;
 use App\User;
 use App\Order;
+use App\Transaction;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class DeliveryManController extends Controller 
@@ -109,9 +111,12 @@ class DeliveryManController extends Controller
     }
 
     public function accountpage($value='')
-    {
+    {   
+        // dd(Auth::user()->deliveryman->id);
+        $transactions = Transaction::where('delivery_man_id',Auth::user()->deliveryman->id)->orderby('created_at','desc')->get();
+        // dd($transactions);
         $orders = Order::orderby('id','desc')->get();
-        return view ('delivery.accountpage',compact('orders'));
+        return view ('delivery.accountpage',compact('transactions','orders'));
     }
 
     public function orderdetail($value='')
@@ -124,5 +129,70 @@ class DeliveryManController extends Controller
      public function accountdetail($value='')
     {
         return view ('delivery.accountdetail');
+    }
+
+     public function confirm($id,$order)
+    {
+
+        // dd($id,$order);
+        $status = Transaction::where('id',$id)->first();
+        $order = Order::where('id', $order)->first();
+
+        $status->status = 3;
+        $status->save();
+
+        $order->status = 3;
+        $order->save();
+
+        return redirect()->route('accountpage');
+    }
+
+     public function pickup($id,$order)
+    {
+
+        // dd($id,$order);
+        $status = Transaction::where('id',$id)->first();
+        $order = Order::where('id', $order)->first();
+
+        $status->status = 4;
+        $status->save();
+
+        $order->status = 4;
+        $order->save();
+
+        return redirect()->route('accountpage');
+    }
+
+     public function delivered($id,$order)
+    {
+
+        // dd($id,$order);
+        $status = Transaction::where('id',$id)->first();
+        $order = Order::where('id', $order)->first();
+
+        $status->status = 5;
+        $status->save();
+
+        $order->status = 5;
+        $order->save();
+
+        return redirect()->route('accountpage');
+    }
+
+    public function cancel($id,$order)
+    {
+
+        // dd($id,$order);
+        $transaction = Transaction::where('id',$id)->first();
+        $order = Order::where('id', $order)->first();
+
+        $transaction->status = 1;
+        $transaction->delivery_man_id = null;
+        $transaction->save();
+
+        $order->status = 1;
+        $order->save();
+
+        return redirect()->route('accountpage');
     }
 }

@@ -37,8 +37,9 @@
 
 		<div class="col-9">
 			<h4>Order List</h4>	
-			@foreach ($orders as $order)
-			
+
+			@foreach ($transactions as $transaction)
+			{{-- {{dd($transaction)}} --}}
 			<div class="card p-3 my-3 bg-light">
 				<div class="card-body">
 					<h5>Order Fresh </h5>
@@ -46,21 +47,36 @@
 					<div>
 						<ul>
 							
-							<li>Pick-place: {{$order->pick_up_place}}</li>
-							<li>Pick-up date: {{$order->pick_up_date}}</li>
-							<li>Pick-up time: {{$order->pick_up_time}}</li>
-							<li>Receiver Name: {{$order->receiver_name}}</li>
-							<li>Receiver Phone: {{$order->receiver_phone}}</li>
-							<li>Sender Name: {{$order->client_id}}</li>
-							<li>Receiver Phone: {{$order->receiver_phone}}</li>
-							<li>Weight: {{$order->weight_id}}</li>
-							<li>Note: {{$order->note}}</li>
-							<li><b>Delivery-Fees: {{$order->product_value}}</b></li>
+							<li>Pick-place: {{$transaction->order->pick_up_place}}</li>
+							<li>Pick-up date: {{$transaction->order->pick_up_date}}</li>
+							<li>Pick-up time: {{$transaction->order->pick_up_time}}</li>
+							<li>Receiver Name: {{$transaction->order->receiver_name}}</li>
+							<li>Receiver Phone: {{$transaction->order->receiver_phone}}</li>
+							<li>Sender Name: {{$transaction->order->client->user->name}}</li>
+							<li>Receiver Phone: {{$transaction->order->receiver_phone}}</li>
+							<li>Weight: {{$transaction->order->weight->weight}}</li>
+							<li>Note: {{$transaction->order->note}}</li>
+							<li><b>Delivery-Fees: {{$transaction->order->product_value}}</b></li>
 							
 						</ul>
 						<div class="float-right">
-							{{-- <a href="{{route('orderdetail')}}" class="btn btn-info">detail</a> --}}
-							<button class="btn btn-success">Confirm</button>
+							@if($transaction->order->status==2 && $transaction->status==2)
+							<a href="{{route('orderconfirm',['id'=>$transaction->id, 'order'=>$transaction->order->id])}}" class="btn btn-primary">Confirm</a>
+
+							<a href="{{route('ordercancel',['id'=>$transaction->id, 'order'=>$transaction->order->id])}}" class="btn btn-danger">Cancel</a>
+
+
+							@elseif($transaction->order->status==3 && $transaction->status==3)
+							<small class="text-info">You confirmed order request. After picking-up, let your admin know!</small>
+							<a href="{{route('orderpickup',['id'=>$transaction->id, 'order'=>$transaction->order->id])}}" class="btn btn-info">Product picked-up</a>
+
+							@elseif($transaction->order->status==4 && $transaction->status==4)
+							<small class="text-warning">Product picked-up! If you delivered to customers, please click.</small>
+							<a href="{{route('orderdelivered',['id'=>$transaction->id, 'order'=>$transaction->order->id])}}" class="btn btn-warning">Delivered</a>
+
+							@elseif($transaction->order->status==5 && $transaction->status==5)
+							<p class="text-success">You have successfully delivered the product.</p>
+							@endif
 						</div>
 					</div>
 				</div>

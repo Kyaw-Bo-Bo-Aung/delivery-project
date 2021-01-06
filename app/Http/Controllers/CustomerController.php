@@ -7,6 +7,7 @@ use App\ProductType;
 use App\PackagingType;
 use App\Weight;
 use App\Transaction;
+use App\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,9 @@ class CustomerController extends Controller
     	return view ('customer.about');
     }
     public function orderinformation($value=''){
-    	$orders=Order::all();
+        $client_id = auth()->user()->id;
+        // dd($client_id);
+    	$orders=Order::where('client_id',$client_id)->orderby('created_at','desc')->get();
         return view ('customer.orderinformation',compact('orders'));
     }
     public function orderdetailhistory($value=''){
@@ -76,7 +79,14 @@ class CustomerController extends Controller
         $order->weight_id = $request->select_weight;
         $order->client_id = $client_id;
         $order->note = $request->note;
+        // $order->status = 0;
         $order->save();
+
+        $transaction = new Transaction;
+        $transaction->order_id = $order->id;
+        $transaction->save();
+
+
 
         return redirect()->route('orderinformationpage');
     }

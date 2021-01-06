@@ -5,7 +5,7 @@
 	<div class="banner_img">
 		<img src="https://www.oneclickhomeservices.com/sites/all/themes/bigideass_responsive_theme/images/home-delivery-banner.jpg" class="img-fluid w-100">
 	</div>
-		<div class="banner_div text-center w-100 p-5">
+		<{{-- div class="banner_div text-center w-100 p-5">
 			<div class="text-center">
 				<h1 class="HH text-white">Delivery For All</h1>
 				<div class="row text-center">
@@ -17,7 +17,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	
 
 

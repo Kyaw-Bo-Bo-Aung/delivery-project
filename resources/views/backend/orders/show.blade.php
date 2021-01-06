@@ -77,18 +77,31 @@
               <li  class="p-1">Pick-up time:<strong>{{$order->pick_up_time}}</strong> </li>
               <li  class="p-1">Product_Types:<strong>{{$order->product_type->name}}</strong></li>
               <li  class="p-1">Packaging_Types:<strong>{{$order->packaging_type->name}}</strong></li>
+              <li  class="p-1">Note:<strong>{{$order->note}}</strong></li>
 
-              <li  class="p-1">Delivery:<select>
-                             <option>Choose Delivery</option>
-                            
-                           </select>
+                {{-- {{dd($transaction->delivery_man_id)}} --}}
+                @if($transaction->delivery_man_id==null)
+                  <form action="{{route('orderassign',['id'=>$transaction->id, 'order'=>$order->id])}}" method="post">
+                  @csrf
+                  
+                    <select name="deliveryId">
+                      <label>Delivery:</label>
+                      @foreach ($deliverymen as $deliveryman)
+                       <option value="{{$deliveryman->id}}">{{$deliveryman->user->name}}</option>                  
+                      @endforeach 
+                    </select>
+                    <input type="submit" name="btn" value="Assign">
+                  </form>
+                @else
+                <li class="p-1">Delivery: {{$transaction->delivery->user->name}}</li>
+                @endif
               </li>
       
-              <li  class="p-1">Note:<strong>{{$order->note}}</strong></li>
+             
             </ul>
 
              <div class="mt-2">
-                    @if($order->status == 0)
+                    @if($transaction->status == 0)
                        
                         <form action="{{route('orders.update',$order->id)}}" method="post">
                           @csrf

@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->date('pick_up_date');
             $table->time('pick_up_time');
             $table->string('product_value')->nullable();
-            $table->string('status')->nullable();
+            $table->string('status')->default('1');
              $table->text('note')->nullable();
             $table->unsignedBigInteger('product_type_id');
             $table->foreign('product_type_id')->references('id')->on('product_types')->onDelete('cascade');

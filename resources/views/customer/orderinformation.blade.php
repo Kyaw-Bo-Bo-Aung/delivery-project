@@ -16,13 +16,13 @@
         <div class="col-md-12">
           <div class="tile">
             <div class="tile-body">
-              <h4 class=" ORDER-TITLE">Order History</h4><br>
+              <h4 class=" ORDER-TITLE">Your Order History</h4><br>
 
              <!--  <a href="#" class="btn btn-success float-right"><i class="fas fa-plus mr-3"></i>Add New</a> -->
 
               <div class="table-responsive mt-3 ORDER-TABLE">                
-                <table class="table table-bordered mt-3 mb-5" id="sampleTable">
-                  <thead class="thead-dark">
+                <table class="table table-bordered mt-3 mb-5 bg-light" id="sampleTable">
+                  <thead>
                     <tr class="Column-Name">
                       <th>No</th>
                       <th>Receiver Name</th>

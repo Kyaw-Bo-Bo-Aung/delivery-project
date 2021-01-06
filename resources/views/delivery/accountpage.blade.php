@@ -57,7 +57,7 @@
 							<li>Receiver Phone: {{$transaction->order->receiver_phone}}</li>
 							<li>Weight: {{$transaction->order->weight->weight}}</li>
 							<li>Note: {{$transaction->order->note}}</li>
-							<li><b>Delivery-Fees: {{$transaction->order->product_value}}</b></li>
+							<li><b>Delivery-Fees: {{$transaction->order->weight->price}}</b></li>
 							
 						</ul>
 						<div class="float-right">

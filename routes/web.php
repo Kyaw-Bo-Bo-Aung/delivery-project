@@ -20,11 +20,12 @@ use Illuminate\Support\Facades\Route;
 Route::resource('/', 'DemoController');
 
 // backend
-// Route::middleware('role:admin')->group(function () { 
+Route::middleware('role:admin')->group(function () { 
 Route::get('dashboard','BackendController@dashboard')->name('dashboardpage');
 Route::resource('producttypes','ProductTypeController');
 Route::resource('packagingtypes','PackagingTypeController');
 Route::resource('orders','OrderController');
+Route::post('/order/search','OrderController@search')->name('ordersearch');
 Route::post('/order/detail','OrderController@detail')->name('orderdetail');
 Route::resource('weights','WeightController');
 Route::post('/order/assign/{id}/{order}','OrderController@assign')->name('orderassign');
@@ -33,13 +34,13 @@ Route::post('/order/assign/{id}/{order}','OrderController@assign')->name('ordera
 Route::get('clientsdetail','BackendController@clientsdetail')->name('clientsdetailpage');
 
 Route::get('deliverydetail','BackendController@deliverydetail')->name('deliverydetailpage');
-// });
+});
 
 
 
 
 //delivery-men 
-// Route::middleware('role:delivery_man')->group(function () {
+Route::middleware('role:delivery_man')->group(function () {
 
 Route::get('accountpage', 'DeliveryManController@accountpage')->name('accountpage');
 Route::get('/accountpage/confirm/{id}/{order}', 'DeliveryManController@confirm')->name('orderconfirm');
@@ -48,9 +49,9 @@ Route::get('/accountpage/delivered/{id}/{order}', 'DeliveryManController@deliver
 Route::get('/accountpage/cancel/{id}/{order}', 'DeliveryManController@cancel')->name('ordercancel');
 Route::get('/deliveryman/accountdetail', 'DeliveryManController@accountdetail')->name('delivery.accountdetail');
 Route::get('orderdetail', 'DeliveryManController@orderdetail')->name('orderdetail');
-Route::resource('client', 'ClientController');
+});
 
-// });
+Route::resource('client', 'ClientController');
 
 Route::resource('delivery', 'DeliveryManController');
 
@@ -63,7 +64,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //.........................Customer View...............................
-// Route::middleware('role:client')->group(function () { 
+Route::middleware('role:client')->group(function () { 
 Route::get('main', 'CustomerController@main')->name('mainpage');
 Route::get('about', 'CustomerController@about')->name('aboutpage');
 Route::get('orderinformation', 'CustomerController@orderinformation')->name('orderinformationpage');
@@ -71,7 +72,7 @@ Route::get('orderdetailhistory', 'CustomerController@orderdetailhistory')->name(
 
 Route::post('weight', 'CustomerController@weight')->name('weight');
 Route::post('create', 'CustomerController@store')->name('createorder');
-// });
+});
 
 Route::get('customerlogin', 'CustomerController@customerlogin')->name('customerloginpage');
 Route::get('customerregister', 'CustomerController@customerregister')->name('customerregisterpage');

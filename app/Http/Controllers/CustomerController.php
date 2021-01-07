@@ -26,7 +26,7 @@ class CustomerController extends Controller
     	return view ('customer.about');
     }
     public function orderinformation($value=''){
-        $client_id = auth()->user()->id;
+        $client_id = auth()->user()->client->id;
         // dd($client_id);
     	$orders=Order::where('client_id',$client_id)->orderby('created_at','desc')->get();
         return view ('customer.orderinformation',compact('orders'));
@@ -48,8 +48,8 @@ class CustomerController extends Controller
     }
 
     public function store(Request $request){
-        // dd ($request);
-        $client_id = auth()->user()->id;
+        // dd (auth()->user()->client->id);
+        $client_id = auth()->user()->client->id;
         // dd($user_id);
         $request->validate([
             'receiverName' => 'required',

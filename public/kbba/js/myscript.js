@@ -61,5 +61,20 @@ $(document).ready(function(){
 
 })
 
+
+	$('.searchBtn').on('click',function(){
+		// alert("ok");
+		var startdate = $('#startdate').val();
+		var enddate = $('#enddate').val();
+		// console.log(enddate);
+
+		$.post("/order/search",{startdate:startdate, enddate:enddate},function(response){
+			// console.log(response);
+			
+		})
+
+	})
+
+
 })
 //end ready function

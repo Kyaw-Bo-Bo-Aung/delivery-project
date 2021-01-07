@@ -4,7 +4,7 @@
 	<div class="container mb-3" id="Form">
 		<div class="row">
 			<!-- Carosal -->
-		  		<div class="col-lg-6 mt-5">
+		  		<div class="col-lg-6 carousel_img">
 		  			<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
 					  <div class="carousel-inner">
 					    <div class="carousel-item active ">

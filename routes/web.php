@@ -66,7 +66,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //.........................Customer View...............................
 Route::middleware('role:client')->group(function () { 
 Route::get('main', 'CustomerController@main')->name('mainpage');
-Route::get('about', 'CustomerController@about')->name('aboutpage');
+
 Route::get('orderinformation', 'CustomerController@orderinformation')->name('orderinformationpage');
 Route::get('orderdetailhistory/{id}', 'CustomerController@orderdetailhistory')->name('orderdetailhistorypage');
 
@@ -76,8 +76,7 @@ Route::post('create', 'CustomerController@store')->name('createorder');
 
 Route::get('customerlogin', 'CustomerController@customerlogin')->name('customerloginpage');
 Route::get('customerregister', 'CustomerController@customerregister')->name('customerregisterpage');
-
-
+Route::get('about', 'CustomerController@about')->name('aboutpage');
 
 
 

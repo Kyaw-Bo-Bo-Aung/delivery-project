@@ -25,7 +25,7 @@ class RedirectIfAuthenticated
             // Check user role
             switch ($roles[0]) {
                 case 'admin':
-                        return redirect()->route('dashboard');
+                        return redirect()->route('orders');
                     break;
                 case 'client':
                         return redirect()->route('main');

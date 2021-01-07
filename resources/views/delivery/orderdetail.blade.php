@@ -28,7 +28,7 @@
 		<div class="col-9">
 			<div class="card">
 				<div class="card-body">
-					<h4>Order Detail</h4>
+					<h4 style="  font-weight: 900;">Order {{-- <span style="color: #17a2b8"> --}}Detail{{-- </span> --}}</h4>      
 					<div class="py-3">
 						<ul>
 							<li>pick-up place: </li>
@@ -47,7 +47,7 @@
 
 						<div class="float-right">
 							<a href="" class="btn btn-primary px-3 mx-3">Confirm order</a>
-							<a href="" class="btn btn-secondary">back</a>
+							<a href="{{ route('accountpage') }}" class="btn btn-secondary">back</a>
 						</div>
 					</div>	
 				</div>

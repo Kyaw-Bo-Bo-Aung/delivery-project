@@ -52,6 +52,10 @@ hr.divid{
 
 /* Slider */
 
+.carousel_img{
+  margin-top: 130px;
+}
+
 .slick-slide {
     margin: 0px 20px;
 }

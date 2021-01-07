@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function index()
     {   
         $orders=Order::all();
-        $transactions = Transaction::all();
+        $transactions = Transaction::orderBy('status')->get();
         // dd($transactions);
         return view('backend.orders.index',compact('orders','transactions'));
     }
@@ -127,6 +127,22 @@ class OrderController extends Controller
 
         return redirect()->route('orders.index');
         
+    }
+
+
+     public function search(Request $request)
+    {
+       // dd($request->startdate,$request->enddate);
+        $startdate = $request->startdate;
+        $enddate = $request->enddate;
+        $Transaction = Transaction::all();
+        $startstring = date('Y-m-d',$Transaction->created_at);
+
+        dd($startstring);
+        $start = Transaction::where("date('Y-m-d',created_at)",$startdate)->get();
+        $end = Transaction::where("date('Y-m-d',created_at)",$enddate)->get();
+
+        dd($request->startdate,$request->enddate,$start,$end);
     }
 
 

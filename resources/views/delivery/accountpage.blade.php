@@ -12,10 +12,10 @@
 						<h3>{{auth()->user()->name}}</h3>
 					</div>
 					<div class="dropdown-divider"></div>
-					<div>
-						<p>Your level: </p>
+					<div class="text-center">
+						{{-- <p>Your level: </p>
 						<p>Delivered orders: 31</p>
-						<a href="/deliveryman/accountdetail" class="btn btn-sm btn-outline-dark py-2">Accout Histroy</a>
+						<a href="/deliveryman/accountdetail" class="btn btn-sm btn-outline-dark py-2">Accout Histroy</a> --}}
 						<a class="btn btn-info" href="{{ route('logout') }}"
                            onclick="if(confirm('Are you sure to log out?')){event.preventDefault();
                                          document.getElementById('logout-form').submit();}">

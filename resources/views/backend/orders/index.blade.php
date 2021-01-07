@@ -21,10 +21,30 @@
      
     </div>
 
+   {{--  <div class="tile">
+      <h3 class="tile-title">Search order</h3>
+      <div class="tile-body">
+        <form class="row">
+          <div class="form-group col-md-5">
+            <label class="control-label">Start date</label>
+            <input class="form-control" type="date" id="startdate">
+          </div>
+          <div class="form-group col-md-5">
+            <label class="control-label">End date</label>
+            <input class="form-control" type="date" id="enddate">
+          </div>
+          <div class="form-group col-md-2 align-self-end">
+            <button class="btn btn-primary searchBtn" type="button">Search</button>
+          </div>
+        </form>
+      </div>
+    </div> --}}
+
     <div class="row">
       <div class="col-md-12">
        <div class="tile">
         <div class="tile-body">
+
          <div class="table-responsive">
           <table class="table table-hover table-bordered mt-3" id="sampleTable">
              <h3 class="d-inline-block">Orders</h3>

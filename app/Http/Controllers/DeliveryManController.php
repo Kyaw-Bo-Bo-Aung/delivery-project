@@ -61,8 +61,9 @@ class DeliveryManController extends Controller
         $delivery_man->address = $request->address;
         $delivery_man->user_id = $user->id;
         $delivery_man->save();
-
-        return redirect()->route('delivery.index');        
+        Auth::login($user);
+        
+        return redirect()->route('accountpage');        
     }
 
     /**

@@ -67,7 +67,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('main', 'CustomerController@main')->name('mainpage');
 Route::get('about', 'CustomerController@about')->name('aboutpage');
 Route::get('orderinformation', 'CustomerController@orderinformation')->name('orderinformationpage');
-Route::get('orderdetailhistory', 'CustomerController@orderdetailhistory')->name('orderdetailhistorypage');
+Route::get('orderdetailhistory/{id}', 'CustomerController@orderdetailhistory')->name('orderdetailhistorypage');
 
 Route::post('weight', 'CustomerController@weight')->name('weight');
 Route::post('create', 'CustomerController@store')->name('createorder');

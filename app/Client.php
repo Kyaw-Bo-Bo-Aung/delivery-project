@@ -22,6 +22,9 @@ class Client extends Model
     return $this->hasMany('App\Order');
   }
   
-  
+  public function transaction()
+    {
+        return $this->hasMany('App\Transaction');
+    }
   
 }

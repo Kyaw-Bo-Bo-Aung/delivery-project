@@ -1,20 +1,47 @@
 @extends('customer_master')
 @section('content')
 	
+
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-12">
+				<h1 class="HH">Become a rider</h1>
+				<p>Deliver the products of our clients to the desired locations.</p>
+				<b>Just need simple steps.</b>
+				<ul>
+					<li>Log in to your account</li>
+					<li>Check your feed and get delivery request</li>
+					<li>Accept request and pick-up </li>
+					<li>Delivered the products, click done!</li>
+				</ul>
+				<b>You can get the following advantages.</b>
+				<ul>
+					<li>Can accept or reject the delivery request.</li>
+					<li>Free working hours</li>
+					<li>Get tips from your customers</li>
+					<li>Make money as much as you can.</li>
+
+				</ul>
+			</div>
+			<div class="col-md-6 col-12">
+				<img src="{{asset('customer_assets/img/deli.jpg')}}" class="img-fluid h-100">
+			</div>
+		</div>
+	</div>
+</div>
+
 	<!-- login -->
 	<div class="Limiter">
 		<div class="Container-login100">
 			<div class="Wrap-login100">
 				<form method="POST" action="{{ route('login') }}">
                      @csrf
-					<span class="Login100-form-title p-b-26">
-						<i class="fas fa-user-circle fa-7x"></i>
-					</span>
 					<span class="Login100-form-title p-b-48">
-						Delivery Log in
+						Log in
 					</span>
 					<div class="wrap-input100 validate-input mt-5" data-validate="Valid email is: @gmail.com">
-						<input type="text" name="email" class="input100 mt-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+						<input type="text" name="email" class="input100 mt-5 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 						@error('email')
                             <span class="invalid-feedback" role="alert">

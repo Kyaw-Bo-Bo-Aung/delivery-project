@@ -102,4 +102,17 @@ class DemoController extends Controller
     {
         //
     }
+
+    public function roles($value = '')
+    {
+        return view('Frontend.roles');
+    }
+     public function customer($value = '')
+    {
+        return view('Frontend.customer');
+    }
+     public function deli($value = '')
+    {
+        return view('Frontend.deli');
+    }
 }

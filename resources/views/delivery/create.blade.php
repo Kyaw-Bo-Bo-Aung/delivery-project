@@ -2,8 +2,11 @@
 @section('content')
 
 <!-- login -->
-<div>
-	<img src="https://www.urgentexpresscourier.com.au/wp-content/uploads/2018/09/After-Hour-Delivery-Banner.jpg" class="img-fluid">
+<div class="registerationholder">
+	<img src="{{asset('customer_assets/img/deli2.jpg')}}" class="img-fluid">
+	<div class="text-center registeration">
+		<h1 class="HH display-4">Registeration</h1>
+	</div>
 </div>
 	<div class="Limiter100">
 		<div class="Container-register100">
@@ -11,7 +14,7 @@
 				<div class="container">
 					<form method="POST" action="{{route('delivery.store')}}">
 						@csrf
-						<h3 class="text-center pb-5">Delivery Register Form</h3>
+						<h3 class="text-center pb-5">Register Form</h3>
 						<div class="row">
 							<div class="col-12">
 								<input type="text" class="form-control form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus id="user name" placeholder="User name">

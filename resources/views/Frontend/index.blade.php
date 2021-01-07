@@ -2,30 +2,50 @@
 @section('content')
 
 
-	<div class="banner_img">
-		<img src="https://www.oneclickhomeservices.com/sites/all/themes/bigideass_responsive_theme/images/home-delivery-banner.jpg" class="img-fluid w-100">
-	</div>
-		<{{-- div class="banner_div text-center w-100 p-5">
-			<div class="text-center">
-				<h1 class="HH text-white">Delivery For All</h1>
-				<div class="row text-center">
-					<div class="col-md-6 col-12">
-						<a href="{{route('customerloginpage')}}" class="btn p-4 btn-primary">Delivery your item</a>
-					</div>
-					<div class="col-md-6 col-12">
-						<a href="{{route('delivery.index')}}" class="btn p-4 btn-success">Become a rider</a>
+	<div class="jumbotron">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<h1 class="HH">Get the fastest & accurate delivery services from DELICOPTER</h1>
+					Our service is delivering the parcel of customer from one place to another place. Customers can send or receive  the parcel as a safely especially during this pandenmic. Customers can send the parcel that are clothes, books, gifts, electronic, household and etc. to the other places. We have a lot of courier services and all of the couriers are in safe hands. Moreover, we insurance 100% for the security of sending or receving parcel.
+					<div>
+						<a href="{{route('roles')}}" class="btn btn-success px-3 py-2 mt-5 rounded-pill"><h5>Get Started</h5></a>
 					</div>
 				</div>
+				<div class="col-6" >
+					<img src="{{asset('customer_assets/img/kho1.png')}}" class="img-fluid">
+				</div>	
 			</div>
-		</div> --}}
-	
+		</div>			
+	</div>
+
 
 
 <div class="container">
-	
-	<div class="text-center my-5">
-		<h2 class="HH">About Our Service</h2>
-		<p class="pb-4 px-5 service-content">We provide everything you need, to create your location based services and applications. Bringing cost efficient high accuracy indoor positioning to boost your business. Service delivery can be defined as any contact with the public administration during which customers – citizens, residents or enterprises – seek or provide data, handle their affairs or fulfil their duties. These services should be delivered in an effective, predictable, reliable and customer-friendly manner.</p>
+	<h1 class="text-center mb-5 HH">Roles</h1>
+	<div class="row">
+		<div class="col-6">
+			<img src="{{asset('customer_assets/img/user1.jpg')}}" class="img-fluid">
+			<div class="card">
+				<div class="p-3">
+					<h3 class="service-title text-center">Client</h3>
+					<p>Deliver your products to desire place with no worry.
+					Get our reliable services with minimum prices. <br> </p>
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-6">
+			<img src="{{asset('customer_assets/img/delivery2.jpg')}}" class="img-fluid">
+			<div class="card">
+				<div class="p-3">
+					<h3 class="service-title text-center">Delivery-man</h3>
+					<p>Earn money by joining with our team. All you have to do is simple. <br> <b><i class="fas fa-gift"></i> Accept Order!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-biking"> </i> Delivered!&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fas fa-dollar-sign"></i> Earn money!!</b></p>
+				</div>
+				
+			</div>
+		</div>
+
 	</div>
 
 
@@ -64,9 +84,160 @@
 		</div>
 	</div>
 
+	<div class="container mt-5">
+		<h2 class="HH text-center">Our Partners</h2>
+		<div class="row ml-3" align="center">
+			<div class="col-sm-12 col-lg-3 mt-3 mb-3">
+				<img src="{{asset('customer_assets/img/8.jpg')}}" width="200" height="100">
+			</div>
+			<div class="col-sm-12 col-lg-3 mt-3 mb-3">
+				<img src="{{asset('customer_assets/img/2.png')}}" width="200" height="95">
+			</div>
+			<div class="col-sm-12 col-lg-3 mt-3 mb-3">
+				<img src="{{asset('customer_assets/img/1.png')}}" width="230" height="90">
+			</div>
+			<div class="col-sm-12 col-lg-3 mt-3 mb-3">
+				<img src="{{asset('customer_assets/img/5.png')}}" width="200" height="90">
+			</div>
+		</div>
+	</div>
+
+
+	<div class="dropdown-divider"></div>
+
+	<!-- contact us -->
+	<h2 class="HH mb-5 mt-3" align="center">Contact Us</h2>
+	<!-- Text of Contact us -->
+		<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-lg-12">
+						<div class="Contact-Us">
+							<span>
+								 Contanct to us, if you need for help and feedback...The DSer Customer Care Centre is always happy to help you.
+							</span>
+						</div>
+					</div>
+				</div>
+		</div>
+
+	<div class="container ABOUTUS">
+		<div class="row">
+		<!-- Phone number -->
+			<div class="col-sm-12 col-lg-6">
+				<div class="mt-5" align="center">
+					<table>
+						<tbody>
+							<tr>
+								<td><i class="fas fa-phone-square-alt fa-lg mr-2"></i></td>
+								<td><span class="CONTACT mr-2">Call Us</span><span class="CONTACT-TWO">| Head Office</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-THREE">Reschedule or Cancle Booking</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-ONE">09-087765686 | 09-267788987</span></td>
+							</tr>
+							<tr class="CONTACT-ONE">
+								<td></td>
+								<td><span class="CONTACT-ONE">7 Days a Week | 8:30AM - 11PM EST</span></td>
+							</tr>
+
+							<tr><td><br></td></tr>
+							<tr>
+								<td><i class="fas fa-phone-square-alt fa-lg mr-2"></i></td>
+								<td><span class="CONTACT mr-2 mt-5">Call Us</span><span class="CONTACT-TWO">| Domestic Courier</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-THREE">Tracking & Customer Support</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-ONE">09-888765421 | 09-789876523 | 01-2231454</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-ONE">7 Days a Week | 8:30AM - 11PM EST</span></td>
+							</tr>
+
+							<tr><td><br></td></tr>
+							<tr>
+								<td><i class="fas fa-phone-square-alt fa-lg mr-2"></i></td>
+								<td><span class="CONTACT mr-2 mt-5">Call Us</span><span class="CONTACT-TWO">| International Courier</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-THREE">Tracking & Customer Support</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-ONE">09-9988765 | 09-22344555 | 01-2345678</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-ONE">7 Days a Week | 8:30AM - 11PM EST</span></td>
+							</tr>
+								
+							<tr><td><br></td></tr>
+							<tr>
+								<td><i class="fas fa-sms fa-lg mr-2"></i></td>
+								<td><span class="CONTACT">Chat With Us</span></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td><span class="CONTACT-ONE">7 Days a Week | 6AM - 11PM EST</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		<!-- end phone number -->
+
+		<!-- Feedback Form -->
+			<div class="col-sm-12 col-lg-6 FEEDBACK-FORM">
+				<form action="#" method="#" class="mt-5 border border-1">
+					<div class="container">
+						<div class="row">
+							<div class="col-6 mt-3">
+								<input type="text" class="form-control" placeholder="First name" aria-label="First name">
+							</div>
+							<div class="col-6 mt-3">
+								<input type="text" class="form-control" placeholder="Second name" aria-label="Second name">
+							</div>
+
+							<div class="col-12 mt-3">
+								<input type="text" class="form-control" placeholder="Phone number" aria-label="Phone number">
+							</div>
+
+							<div class="col-12 mt-3">
+								<input type="email" class="form-control" placeholder="Email" aria-label="Email">
+							</div>
+
+							<div class="col-12 mt-3">
+								<textarea class="form-control Textarea" placeholder="Message:" required></textarea>
+							</div>
+
+							<div class="col-3 mt-3 mb-3">
+								<input type="submit" name="btn-submit" value="Submit" class="btn btn-outline-primary">
+								
+							</div>
+
+
+						</div>
+					 
+					</div>
+				</form>			
+			</div>
+		<!-- end Feedback Form -->
+		</div>
+	</div>
+<!-- end contact us -->
 
 
 
+{{-- 
 	<div>
 		<h3 class="HH" align="center">Transport & Courier Service</h3>
 		<div class="container">
@@ -114,7 +285,7 @@
 
 		</div>
 		
-	</div>
+	</div> --}}
 </div>
 
 

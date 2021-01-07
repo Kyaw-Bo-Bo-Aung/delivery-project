@@ -19,11 +19,20 @@
 		</button>
 		<div class="collapse navbar-collapse" id="Nav">
 			<ul class="navbar-nav ml-auto mr-5">
+				@auth
 				<li class="nav-item mx-2"><a href="{{ route('mainpage') }}" class="nav-link text-white">Home</a></li>
+				@else
+				<li class="nav-item mx-2"><a href="/" class="nav-link text-white">Home</a></li>
+				@endauth
 				<li class="nav-item mx-2"><a href="{{ route('aboutpage') }}" class="nav-link text-white">About Us</a></li>
+				@auth
 				<li class="nav-item mx-2"><a href="{{ route('orderinformationpage') }}" class="nav-link text-white">Order information</a></li>
+				@else
+				<li class="nav-item mx-2"><a href="{{ route('roles') }}" class="nav-link text-white">Roles</a></li>
+				@endauth
+
 				{{-- <li class="nav-item mx-2"><a href="{{ route('customerloginpage') }}" class="nav-link text-white">Login | Sign-up</a></li> --}}
-				@guest
+				{{-- @guest
                     <li class="nav-item">
                         <a class="nav-link text-white" href="{{ route('customerloginpage') }}">{{ __('Login') }}</a>
                     </li>
@@ -35,8 +44,8 @@
 						    <a class="dropdown-item" href="{{ route('delivery.create') }}">{{ __('Delivery-man') }}</a>
 						</div>  
                      </div>
-                    @endif
-                @else
+                    @endif --}}
+                @auth
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -54,7 +63,7 @@
                             </form>
                         </div>
                     </li>
-                @endguest
+                @endauth
 			</ul>
 		</div>
 	</nav>

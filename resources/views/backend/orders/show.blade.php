@@ -81,16 +81,22 @@
 
                 {{-- {{dd($transaction->delivery_man_id)}} --}}
                 @if($transaction->delivery_man_id==null)
+                
                   <form action="{{route('orderassign',['id'=>$transaction->id, 'order'=>$order->id])}}" method="post">
                   @csrf
+                 
+                    <div class="p-3">
+                      <label><b>Choose Delivery:</b></label>
+                        <select name="deliveryId" class="form-control">
+                          @foreach ($deliverymen as $deliveryman)
+                           <option value="{{$deliveryman->id}}">{{$deliveryman->user->name}}</option>                  
+                          @endforeach 
+                        </select>
+                        <input type="submit" name="btn" value="Assign" class="btn btn-outline-primary my-3">
+                    </div>
+                      
+                 
                   
-                    <select name="deliveryId">
-                      <label>Delivery:</label>
-                      @foreach ($deliverymen as $deliveryman)
-                       <option value="{{$deliveryman->id}}">{{$deliveryman->user->name}}</option>                  
-                      @endforeach 
-                    </select>
-                    <input type="submit" name="btn" value="Assign">
                   </form>
                 @else
                 <li class="p-1">Delivery: {{$transaction->delivery->user->name}}</li>

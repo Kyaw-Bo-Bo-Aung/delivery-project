@@ -285,7 +285,7 @@
 
 				<div class="col-lg-6">
 					<div class="service-box" data-wow-offset="100" style="visibility: visible;">
-						<h5 class="service-title"><i class="fas fa-archive fa-lg mr-5 ICON""></i>Fulfillment Centers</h5>
+						<h5 class="service-title"><i class="fas fa-archive fa-lg mr-5 ICON"></i>Fulfillment Centers</h5>
 						<span class="EXPRESS">Warehouse & Storage Solutions - Free Pickup</span>
 						<div class="clearfix"></div>
 						<p class="service-content">Buy or Sell online in India using our shipping address, We store your products in our fulfillment centers as your virtual warehouse, and we pick, pack, deliver to you & your customer, We also provide customer support service and manage returns.</p>						

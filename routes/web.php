@@ -18,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('/', 'DemoController');
+Route::get('roles', 'DemoController@roles')->name('roles');
+// Route::get('customer', 'DemoController@customer')->name('customer');
+// Route::get('deli', 'DemoController@deli')->name('deli');
+
+
+
 
 // backend
 Route::middleware('role:admin')->group(function () { 

@@ -179,8 +179,24 @@ margin-top: 46px;
 .FOOTER{
   background-color: #568ea6;
   color: white;
+  /*position:fix*/
+  position:absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+
+ /* margin-top: 225px;*/
+ /* bottom: 0;*/
+}
+body{
+  padding:  0 0 80px 0;
 }
 
+html{
+  position: relative;
+  min-height: 100%;
+}
 
 .hrr{
     width: 40%;

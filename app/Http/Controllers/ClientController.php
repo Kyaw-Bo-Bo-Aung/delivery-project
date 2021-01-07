@@ -6,6 +6,7 @@ use App\Client;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class ClientController extends Controller
 {
@@ -58,7 +59,8 @@ class ClientController extends Controller
         $client->user_id = $user->id;
         $client->save();
 
-        return redirect()->route('customerloginpage');        
+        Auth::login($user);
+        return redirect()->route('mainpage');        
     }
     
 

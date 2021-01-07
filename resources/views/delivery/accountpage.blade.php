@@ -12,10 +12,10 @@
 						<h3>{{auth()->user()->name}}</h3>
 					</div>
 					<div class="dropdown-divider"></div>
-					<div>
-						<p>Your level: </p>
+					<div class="text-center">
+						{{-- <p>Your level: </p>
 						<p>Delivered orders: 31</p>
-						<a href="/deliveryman/accountdetail" class="btn btn-sm btn-outline-dark py-2">Accout Histroy</a>
+						<a href="/deliveryman/accountdetail" class="btn btn-sm btn-outline-dark py-2">Accout Histroy</a> --}}
 						<a class="btn btn-info" href="{{ route('logout') }}"
                            onclick="if(confirm('Are you sure to log out?')){event.preventDefault();
                                          document.getElementById('logout-form').submit();}">
@@ -41,8 +41,15 @@
 			@foreach ($transactions as $transaction)
 			{{-- {{dd($transaction)}} --}}
 			<div class="card p-3 my-3 bg-light">
-				<div class="card-body">
-					<h5>Order Fresh </h5>
+				<div class="card-body shadow">
+					@if($transaction->status==5)
+					<h3 class="d-inline-block">Order Done </h3><i class="far fa-2x fa-check-circle text-success pl-2"></i>
+					@elseif($transaction->status==2)
+                          <h3>New Order</h3>
+                    @else <h3>In Process</h3>
+					@endif
+					
+
 					<div class="dropdown-divider"></div>
 					<div>
 						<ul>
@@ -54,10 +61,10 @@
 							<li>Receiver Name: {{$transaction->order->receiver_name}}</li>
 							<li>Receiver Phone: {{$transaction->order->receiver_phone}}</li>
 							<li>Sender Name: {{$transaction->order->client->user->name}}</li>
-							<li>Receiver Phone: {{$transaction->order->receiver_phone}}</li>
+							<li>Sender Phone: {{$transaction->order->client->phone}}</li>
 							<li>Weight: {{$transaction->order->weight->weight}}</li>
 							<li>Note: {{$transaction->order->note}}</li>
-							<li><b>Delivery-Fees: {{$transaction->order->product_value}}</b></li>
+							<li><b>Delivery-Fees: {{$transaction->order->weight->price}}</b></li>
 							
 						</ul>
 						<div class="float-right">
@@ -85,7 +92,7 @@
 			@endforeach	
 
 			
-			<div class="card p-3 my-3 bg-light">
+			{{-- <div class="card p-3 my-3 bg-light">
 				<div class="card-body">
 					<h5>Order Done <img src="https://www.nicepng.com/png/detail/443-4439064_blue-check-mark-icon-png-check-mark-circle.png" width="44" height="30"></h5>
 					<div class="dropdown-divider"></div>
@@ -98,12 +105,12 @@
 							<li>Note: something</li>
 						</ul>
 						<div class="float-right">
-							<a href="{{route('orderdetail')}}" class="btn btn-info">detail</a>
+							<a href="{{route('orderdetail')}}" class="btn btn-info">detail</a> --}}
 							{{-- <button class="btn btn-outline-success">Confirm</button> --}}
-						</div>
+					{{-- 	</div>
 					</div>
 				</div>
-			</div>	
+			</div>	 --}}
 
 
 		</div>
@@ -111,7 +118,13 @@
 	</div>
 </div>
 
-
+{{-- @section('script')
+ <script type="text/javascript">
+ 	$(document).ready(function(){
+ 		$(".DeliverBtn").click
+ 	})
+ </script>
+@endsection --}}
 
 
 

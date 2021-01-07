@@ -17,13 +17,42 @@
             <div class="tile-body">
               <h4 class=" ORDER-TITLE">Order Detail</h4><br>
 
-              <a href="{{route('orderinformationpage')}}" class="btn btn-secondary btn-sm float-right"><i class="fas fa-caret-left"></i>&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
+              <a href="{{route('orderinformationpage')}}" class="btn btn-secondary btn-sm float-right mb-5"><i class="fas fa-caret-left b-5"></i>&nbsp;&nbsp;Back&nbsp;&nbsp;</a>
              
               <div class="table-responsive mt-3">                
+                @foreach($transactions as $transaction)
+                 
+                <div class="d-inline-block">
+                  <div>
+                    <strong> 
+                    Client Name : {{$transaction->order->client->user->name}}</strong> 
+                  </div>
+
+                  <div>
+                   <strong>
+                    Receiver Name : {{$transaction->order->receiver_name}}
+                   </strong> 
+                  </div>
+                </div>
+                
+                <div class="float-right">
+                  <div>
+                   <strong>
+                     Delivery Name : @if($transaction->delivery_man_id) {{$transaction->delivery->user->name}} @endif 
+                   </strong> 
+                  </div>
+
+                  <div>
+                      <strong>
+                      Delivery Fees : {{$transaction->order->weight->price}}</strong> 
+                  </div>
+
+                </div>
                 <table class="table table-bordered mt-3 mb-5 shadow" id="sampleTable">
+                
                   <thead>
-                    <tr>
-                      <th>Receiver Name</th>
+                     
+                     {{--  <th>Receiver Name</th>
                       <th>Receiver Phone</th>
                       <th>Product_Types</th>
                       <th>Packaging_Types</th>
@@ -34,12 +63,51 @@
                       <th>Pick-up Time</th>
                       <th>Pick-up Date</th>
                       <th>Delivery Fees</th>
-                      <th>Note</th>
+                      <th>Delivery Name</th>
+                      <th>Note</th> --}}
+                      <tr>
+                       <th width="250px">Product_Types</th>
+                       <td>{{$transaction->order->product_type->name}}</td>
+                      </tr>
+                      <tr>
+                        <th>Packaging_Types</th>
+                        <td>{{$transaction->order->packaging_type->name}}</td>
+                      </tr>
+                      <tr>
+                        <th>Qty</th>
+                        <td>{{$transaction->order->qty}}</td>
+                      </tr>
+                      <tr>
+                        <th>Weight</th>
+                        <td>{{$transaction->order->weight->weight}}</td>
+                      </tr>
 
-                    </tr>
+                      <tr>
+                        <th>Pick-up Place</th>
+                        <td>{{$transaction->order->pick_up_place}}</td>
+                      </tr>
+
+                      <tr>
+                        <th>Drop-off Place</th>
+                        <td>{{$transaction->order->drop_off_place}}</td>
+                      </tr>
+                      <tr>
+                        <th>Pick-up Time</th>
+                        <td>{{$transaction->order->pick_up_time}}</td>
+                      </tr>
+                      <tr>
+                        <th>Pick-up Date</th>
+                        <td>{{$transaction->order->pick_up_date}}</td>
+                      </tr>
+             
+                      <tr>
+                        <th>Note</th>
+                        <td>{{$transaction->order->note}}</td>
+                      </tr>
+                      
                   </thead>
                   <tbody>
-                    @foreach($transactions as $transaction)
+                   {{--  @foreach($transactions as $transaction)
                     <tr>
                       <td>{{$transaction->order->receiver_name}}</td>
                       <td>{{$transaction->order->receiver_phone}}</td>
@@ -51,12 +119,14 @@
                       <td>{{$transaction->order->drop_off_place}}</td>
                       <td>{{$transaction->order->pick_up_time}}</td>
                       <td>{{$transaction->order->pick_up_date}}</td>
-                      <td>{{$transaction->order->weight->price}}</td>
-                      <td>{{$transaction->order->note}}</td>
-                    </tr>
-                    @endforeach
+                      <td>{{$transaction->order->weight->price}}</td> --}}
+                     {{--  <td>{{$transaction->delivery->user->name}}</td> --}}
+                     {{--  <td>{{$transaction->order->note}}</td>
+                    </tr> --}}
+                   
                   </tbody>    
                 </table>
+                 @endforeach
                </div>
             </div>
           </div>

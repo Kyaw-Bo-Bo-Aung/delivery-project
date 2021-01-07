@@ -28,13 +28,13 @@ class CustomerController extends Controller
     public function orderinformation($value=''){
         $client_id = auth()->user()->client->id;
         // dd($client_id);
-        $transactions=Transaction::orderBy('id','desc')->get();
+        $transactions=Transaction::where('id',$client_id)->orderBy('created_at','desc')->get();
     	$orders=Order::where('client_id',$client_id)->orderby('created_at','desc')->get();
         return view ('customer.orderinformation',compact('orders','transactions'));
     }
     public function orderdetailhistory($id){
         // dd($id);
-        $transactions=Transaction::where('id',$id)->get();
+        $transactions=Transaction::where('order_id',$id)->get();
     	return view ('customer.orderdetailhistory',compact('transactions'));
     }
      public function customerlogin($value=''){

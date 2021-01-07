@@ -69,38 +69,38 @@
         </div>
       </div> --}}
   <div class="row">
-    @foreach($transactions as $transaction)
+    @foreach($orders as $order)
     <div class="col-lg-4 my-4">
   <div class="card shadow">
   <div class="card-body">
    
     <ul type="square" style="line-height: 180%">
-      <li>Receiver Name : <strong>{{$transaction->order->receiver_name}}</strong></li>
-      <li>Receiver Phone : <strong>{{$transaction->order->receiver_phone}}</strong></li>
-      <li>Drop-off Place : <strong>{{$transaction->order->drop_off_place}}</strong></li>
-      <li>Delivery Fees : <strong>{{$transaction->order->weight->price}}</strong></li>
-      @if($transaction->status==3)
+      <li>Receiver Name : <strong>{{$order->receiver_name}}</strong></li>
+      <li>Receiver Phone : <strong>{{$order->receiver_phone}}</strong></li>
+      <li>Drop-off Place : <strong>{{$order->drop_off_place}}</strong></li>
+      <li>Delivery Fees : <strong>{{$order->weight->price}}</strong></li>
+    {{--   @if($transaction->status==3)
       <li>Delivery Name : <strong>{{$transaction->delivery->user->name}}</strong></li>
       @elseif($transaction->status==4)
       <li>Delivery Name : <strong>{{$transaction->delivery->user->name}}</strong></li>
       @elseif($transaction->status==5)
       <li>Delivery Name : <strong>{{$transaction->delivery->user->name}}</strong></li>
-      @endif
+      @endif --}}
       <li>
-        @if($transaction->status==1 && $transaction->order->status==1)
+        @if($order->status==1)
                 <p class="text-white d-inline-block bg-warning rounded py-1 px-2">Request In Process</p>
-          @elseif($transaction->status==2 && $transaction->order->status==2)
+          @elseif($order->status==2)
                 <p class="text-white d-inline-block bg-secondary rounded py-1 px-2">Request In Process</p>
-          @elseif($transaction->status==3 && $transaction->order->status==3)
+          @elseif($order->status==3)
                 <p class="text-white d-inline-block bg-primary rounded py-1 px-2">Delivery Found</p>
-          @elseif($transaction->status==4 && $transaction->order->status==4)
+          @elseif($order->status==4)
                 <p class="text-white d-inline-block bg-info rounded py-1 px-2">Picked-up</p>
-          @elseif($transaction->status==5 && $transaction->order->status==5)
+          @elseif($order->status==5)
                 <p class="text-white d-inline-block bg-success rounded py-1 px-2">Delivered Success</p>
           @endif
       </li>
     </ul>
-    <a href="{{route('orderdetailhistorypage',$transaction->id)}}" class="btn btn-outline-info float-right">Detail</a>
+    <a href="{{route('orderdetailhistorypage',$order->id)}}" class="btn btn-outline-info float-right">Detail</a>
   </div>
 </div>
 </div>

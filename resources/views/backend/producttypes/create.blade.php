@@ -17,7 +17,7 @@
        <div class="tile">
         <div class="tile-body">
           <h3 class="d-inline-block">Product_Type Create Form</h3>
-          <a href="{{route('producttypes.index')}}" class="btn btn-info float-right">Back</a>
+          <a href="{{route('producttypes.index')}}" class="btn btn-info float-right btn-sm">Back</a>
       
              <form method="post" action="{{route('producttypes.store')}}" enctype="multipart/form-data">
             @csrf
@@ -31,7 +31,7 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="btn-submit" value="Save" class="btn btn-info">
+              <input type="submit" name="btn-submit" value="Save" class="btn btn-info btn-sm">
             </div>
             
           </form>

@@ -88,19 +88,19 @@
       @endif --}}
       <li>
         @if($order->status==1)
-                <p class="text-white d-inline-block bg-warning rounded py-1 px-2">Request In Process</p>
+                <p class="text-white d-inline-block bg-warning rounded py-1 px-2 btn-sm">Request In Process</p>
           @elseif($order->status==2)
-                <p class="text-white d-inline-block bg-secondary rounded py-1 px-2">Request In Process</p>
+                <p class="text-white d-inline-block bg-secondary rounded py-1 px-2  btn-sm">Request In Process</p>
           @elseif($order->status==3)
-                <p class="text-white d-inline-block bg-primary rounded py-1 px-2">Delivery Found</p>
+                <p class="text-white d-inline-block bg-primary rounded py-1 px-2  btn-sm">Delivery Found</p>
           @elseif($order->status==4)
-                <p class="text-white d-inline-block bg-info rounded py-1 px-2">Picked-up</p>
+                <p class="text-white d-inline-block bg-info rounded py-1 px-2  btn-sm">Picked-up</p>
           @elseif($order->status==5)
-                <p class="text-white d-inline-block bg-success rounded py-1 px-2">Delivered Success</p>
+                <p class="text-white d-inline-block bg-success rounded py-1 px-2  btn-sm">Delivered Success</p>
           @endif
       </li>
     </ul>
-    <a href="{{route('orderdetailhistorypage',$order->id)}}" class="btn btn-outline-info float-right">Detail</a>
+    <a href="{{route('orderdetailhistorypage',$order->id)}}" class="btn btn-outline-info float-right btn-sm">Detail</a>
   </div>
 </div>
 </div>

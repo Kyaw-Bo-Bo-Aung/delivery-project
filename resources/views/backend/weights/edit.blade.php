@@ -17,7 +17,7 @@
        <div class="tile">
         <div class="tile-body">
           <h3 class="d-inline-block">Weight Edit Form</h3>
-          <a href="{{route('weights.index')}}" class="btn btn-info float-right">Back</a>
+          <a href="{{route('weights.index')}}" class="btn btn-info float-right btn-sm">Back</a>
 
           <form method="post" action="{{route('weights.update',$weight->id)}}">
              @csrf
@@ -33,7 +33,7 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="btn-submit" value="Update" class="btn btn-info">
+              <input type="submit" name="btn-submit" value="Update" class="btn btn-info btn-sm">
             </div>
             
           </form>

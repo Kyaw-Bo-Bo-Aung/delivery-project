@@ -77,19 +77,19 @@
         @endif
         <td>        
           @if($transaction->status==1 && $transaction->order->status==1)
-                <p class="text-white d-inline-block bg-warning rounded py-1 px-2">Requesting Order</p>
+                <p class="text-white d-inline-block bg-warning rounded py-1 px-2 btn-sm">Requesting</p>
           @elseif($transaction->status==2 && $transaction->order->status==2)
-                <p class="text-white d-inline-block bg-secondary rounded py-1 px-2">Assigning</p>
+                <p class="text-white d-inline-block bg-secondary rounded py-1 px-2 btn-sm">Assigning</p>
           @elseif($transaction->status==3 && $transaction->order->status==3)
-                <p class="text-white d-inline-block bg-primary rounded py-1 px-2">Accepted</p>
+                <p class="text-white d-inline-block bg-primary rounded py-1 px-2 btn-sm">Accepted</p>
           @elseif($transaction->status==4 && $transaction->order->status==4)
-                <p class="text-white d-inline-block bg-info rounded py-1 px-2">Picked-up</p>
+                <p class="text-white d-inline-block bg-info rounded py-1 px-2 btn-sm">Picked-up</p>
           @elseif($transaction->status==5 && $transaction->order->status==5)
-                <p class="text-white d-inline-block bg-success rounded py-1 px-2">Delivered</p>
+                <p class="text-white d-inline-block bg-success rounded py-1 px-2 btn-sm">Delivered</p>
           @endif
         </td>
         <td>
-          <a href="{{route('orders.show',$transaction->order->id)}}" class="btn btn-info">Detail</a>
+          <a href="{{route('orders.show',$transaction->order->id)}}" class="btn btn-info btn-sm">Detail</a>
          {{--  <a href="javascript:void[0]" class="btn btn-success assignedBtn" data-id="{{$order->id}}">Set Delivery-Man</a> --}}
         </td>
         </tr>

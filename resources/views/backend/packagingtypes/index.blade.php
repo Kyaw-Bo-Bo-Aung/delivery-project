@@ -19,7 +19,7 @@
          <div class="table-responsive">
           <table class="table table-hover table-bordered mt-3" id="sampleTable">
              <h3 class="d-inline-block">Packaging_Type List</h3>
-             <a href="{{route('packagingtypes.create')}}" class="btn btn-primary float-right">Add New</a>
+             <a href="{{route('packagingtypes.create')}}" class="btn btn-primary float-right btn-sm">Add New</a>
            
            <thead>
             <tr>
@@ -35,11 +35,11 @@
                <td>{{$i++}}</td>
                <td>{{$packagingType->name}}</td>
                <td>
-                <a href="{{route('packagingtypes.edit',$packagingType->id)}}" class="btn btn-warning">Edit</a>
+                <a href="{{route('packagingtypes.edit',$packagingType->id)}}" class="btn btn-warning btn-sm">Edit</a>
                  <form method="post" action="{{route('packagingtypes.destroy',$packagingType->id)}}" onsubmit="return confirm('Are you sure?')"   class="d-inline-block">
                       @csrf
                       @method('DELETE')
-                      <input type="submit" name="btn-delete" class="btn btn-danger" value="Delete">
+                      <input type="submit" name="btn-delete" class="btn btn-danger btn-sm" value="Delete">
                  </form>
                </td>
              </tr>

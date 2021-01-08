@@ -30,7 +30,7 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="btn-submit" value="Save" class="btn btn-info">
+              <input type="submit" name="btn-submit" value="Save" class="btn btn-info btn-sm">
             </div>
             
           </form>

@@ -17,7 +17,7 @@
        <div class="tile">
         <div class="tile-body">
           <h3 class="d-inline-block">Weight Create Form</h3>
-          <a href="{{route('weights.index')}}" class="btn btn-info float-right">Back</a>
+          <a href="{{route('weights.index')}}" class="btn btn-info float-right btn-sm">Back</a>
            <form method="post" action="{{route('weights.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="btn-submit" value="Save" class="btn btn-info">
+              <input type="submit" name="btn-submit" value="Save" class="btn btn-info btn-sm">
             </div>
             
           </form>

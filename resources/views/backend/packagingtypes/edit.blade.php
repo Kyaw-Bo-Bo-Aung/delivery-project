@@ -17,7 +17,7 @@
        <div class="tile">
         <div class="tile-body">
           <h3 class="d-inline-block">Packaging_Type Edit Form</h3>
-          <a href="{{route('packagingtypes.index')}}" class="btn btn-info float-right">Back</a>
+          <a href="{{route('packagingtypes.index')}}" class="btn btn-info float-right btn-sm">Back</a>
 
           <form method="post" action="{{route('packagingtypes.update',$packagingType->id)}}">
              @csrf
@@ -28,7 +28,7 @@
             </div>
 
             <div class="form-group">
-              <input type="submit" name="btn-submit" value="Update" class="btn btn-info">
+              <input type="submit" name="btn-submit" value="Update" class="btn btn-info btn-sm">
             </div>
             
           </form>

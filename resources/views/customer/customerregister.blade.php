@@ -91,6 +91,12 @@
 	                                <label for="agree-term" class="label-agree-term"><span class="Term">I agree all statements in  <a href="#" class="term-service">Terms of service</a></span></label>
 	                            </div>
 							</div>
+
+							<div class="col-12">
+								<div class="form-group">
+	                                <label for="login" class="label-agree-term"><span class="Term">If you already have account. Please <a href="{{route('customerloginpage')}}" class="term-service">Log in.</a></span></label>
+	                            </div>
+							</div>
 							
 					
 								<div class=" col-12 container-register100-form-btn">

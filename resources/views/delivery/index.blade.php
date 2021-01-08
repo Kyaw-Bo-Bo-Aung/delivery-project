@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-12">
-				<h1 class="HH">Become a rider</h1>
+				<h1 class="HH">Become a delivery-man</h1>
 				<p>Deliver the products of our clients to the desired locations.</p>
 				<b>Just need simple steps.</b>
 				<ul>

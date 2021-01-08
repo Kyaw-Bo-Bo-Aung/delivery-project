@@ -54,7 +54,7 @@
 		<div class="row my-5">
 			<div class="col-lg-4 col-md-6 col-12">
 				<div class="card">
-					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Simple_light_bulb_graphic.png/231px-Simple_light_bulb_graphic.png" class="card-img-top w-25 mx-auto mb-3 mt-4">
+					<img src="{{asset('customer_assets/img/light.png')}}" class="card-img-top w-25 mx-auto mb-3 mt-4">
 					<div class="card-body text-center">
 						<h5 class="py-2 service-title">Simple</h5>
 						<p class="service-content">We offer Door-to-Door Delivery as a Service. This lets you to focus on your business, as we take care of delivering and maintaining the technology and services.</p>
@@ -64,7 +64,7 @@
 
 			<div class="col-lg-4 col-md-6 col-12">
 				<div class="card">
-					<img src="https://webstockreview.net/images/save-money-icon-png.png" class="card-img-top w-25 mx-auto mb-3 mt-4">
+					<img src="{{asset('customer_assets/img/coin.png')}}" class="card-img-top w-25 mx-auto mb-3 mt-4">
 					<div class="card-body text-center">
 						<h5 class="py-2 service-title">Cost efficient</h5>
 						<p class="service-content">Delivery service is a tool for adding value to your business. With our reasonable, predictable, you don’t have to worry about surprising costs and diminishing margins.</p>
@@ -74,7 +74,7 @@
 
 			<div class="col-lg-4 col-md-6 col-12">
 				<div class="card">
-					<img src="https://img.icons8.com/ios/452/accuracy.png" class="card-img-top w-25 mx-auto mb-3 mt-4">
+					<img src="{{asset('customer_assets/img/target.png')}}" class="card-img-top w-25 mx-auto mb-3 mt-4">
 					<div class="card-body text-center">
 						<h5 class="py-2 service-title">Accurate</h5>
 						<p class="service-content">Our solution enables indoor is capable of accurately tracking a multitude of objects, even in crowded and demanding environments.</p>

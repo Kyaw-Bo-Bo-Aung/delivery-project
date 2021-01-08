@@ -5,14 +5,14 @@
 	<div class="jumbotron">
 		<div class="container">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-lg-6 col-12">
 					<h1 class="HH">Get the fastest & accurate delivery services from DELICOPTER</h1>
 					Our service is delivering the parcel of customer from one place to another place. Customers can send or receive  the parcel as a safely especially during this pandenmic. Customers can send the parcel that are clothes, books, gifts, electronic, household and etc. to the other places. We have a lot of courier services and all of the couriers are in safe hands. Moreover, we insurance 100% for the security of sending or receving parcel.
 					<div>
 						<a href="{{route('roles')}}" class="btn btn-success px-3 py-2 mt-5 rounded-pill"><h5>Get Started</h5></a>
 					</div>
 				</div>
-				<div class="col-6" >
+				<div class="col-lg-6 col-12" >
 					<img src="{{asset('customer_assets/img/kho1.png')}}" class="img-fluid">
 				</div>	
 			</div>
@@ -24,7 +24,7 @@
 <div class="container">
 	<h1 class="text-center mb-5 HH">Roles</h1>
 	<div class="row">
-		<div class="col-6">
+		<div class="col-md-6 col-12 py-3">
 			<img src="{{asset('customer_assets/img/user1.jpg')}}" class="img-fluid">
 			<div class="card">
 				<div class="p-3">
@@ -35,7 +35,7 @@
 				
 			</div>
 		</div>
-		<div class="col-6">
+		<div class="col-md-6 col-12 py-3">
 			<img src="{{asset('customer_assets/img/delivery2.jpg')}}" class="img-fluid">
 			<div class="card">
 				<div class="p-3">

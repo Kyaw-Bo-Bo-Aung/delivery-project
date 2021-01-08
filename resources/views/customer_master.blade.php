@@ -14,6 +14,10 @@
 <!-- Navigation -->
 	<nav class="navbar navbar-expand-lg navbar-light N">
 		<img src="{{asset('customer_assets/img/logo4.png')}}" class="img-fluid logo_image image ml-5">
+		<div class="d-none d-md-inline-block">
+			<a href="" class="navbar-brand" style="line-height: 1px;"><h2 style=" font-weight: 900;">Delicopter</h2><span>Delivery service</span></a><br>
+		</div>
+
 		<button class="navbar-toggler" data-target="#Nav" data-toggle="collapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -75,7 +79,7 @@
 	<div class="container-fluid pt-4 FOOTER">
 		<div class="row">
 			<div class="col-md-6">
-				<p class="text-center text-md-left ml-5">CopyRight&copy;delieveryservice2021</p>
+				<p class="text-center text-md-left ml-5">CopyRight&copy;2021 DELICOPTER</p>
 			</div>
 			<div class="col-md-6">
 				<p class="text-center text-md-right mr-5"><i class="fab fa-facebook-square fa-2x mx-2"></i><i class="fab fa-twitter-square fa-2x mx-2"></i><i class="fab fa-instagram-square fa-2x mx-2"></i></p>

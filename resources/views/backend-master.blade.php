@@ -25,7 +25,9 @@
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="index.html">Delivery Service</a>
+    <header class="app-header"><a class="app-header__logo" href="index.html">
+      <img src="{{asset('customer_assets/img/logo4.png')}}" width="50px"><span class="ml-2">Delicopter</span>
+    </a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
@@ -97,8 +99,10 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
       <div class="app-sidebar__user"> 
-        <div>
-          <p class="app-sidebar__user-name">{{auth()->user()->name}}</p>
+        <div class="m-auto">
+          <p class="app-sidebar__user-name">
+            {{auth()->user()->name}}
+          </p>
          {{--  <p class="app-sidebar__user-designation">Frontend Developer</p> --}}
         </div>
       </div>
